@@ -3,11 +3,11 @@ Temporary layout for now. If you know some webdev, please help me build the layo
 
 ## 2019
 * * *
--tamuCTF
+- tamuCTF
 
--neverlanCTF
+- neverlanCTF
 
 ## 2018
 * * *
--picoCTF/pwn
+- picoCTF/pwn
 
