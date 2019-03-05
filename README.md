@@ -9,5 +9,5 @@ Temporary layout for now. If you know some webdev, please help me build the layo
 
 ## 2018
 * * *
-- [picoCTF/pwn](/content/CTF/2018/picoCTF/hello.md)
+- [picoCTF/pwn](/content/2018_CTF/picoCTF/hello.md)
 
