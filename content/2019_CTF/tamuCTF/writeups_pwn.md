@@ -188,4 +188,3 @@ $ python exploit.py
    Right. Off you go.
    gigem{34sy_CC428ECD75A0D392}
 ```
-## Flag: gigem{34sy_CC428ECD75A0D392}
