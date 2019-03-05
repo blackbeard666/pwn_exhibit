@@ -1,11 +1,11 @@
 # tamuCTF: pwn
 
 ## pwn1
-### Assumeably the easiest among the pwn challenges, I started the approach by running the 32-bit executable. We get asked by a prompt which reads: 
+#### Assumeably the easiest among the pwn challenges, I started the approach by running the 32-bit executable. We get asked by a prompt which reads: 
 ```
    Stop! Who would cross the Bridge of Death must answer me these questions three, ere the other side he see. What... is your name?
 ```
-### Given the prompt and disassembly from gdb, I deduced that there is a string check for these questions. So what I did was use the command line utility *strings* on the binary and I got answers for the first two questions:
+#### Given the prompt and disassembly from gdb, I deduced that there is a string check for these questions. So what I did was use the command line utility *strings* on the binary and I got answers for the first two questions:
 ```
    Stop! Who would cross the Bridge of Death must answer me these questions three, ere the other side he see.
    What... is your name?
@@ -15,7 +15,7 @@
    To seek the Holy Grail.
    What... is my secret?
 ```
-### We now passed the first two questions, leaving us with only one more whose answer isn't shown up on strings or anywhere else. Fired up gdb-peda and disassembled the binary to have a deeper look into it. Disassembling the main function results into:
+#### We now passed the first two questions, leaving us with only one more whose answer isn't shown up on strings or anywhere else. Fired up gdb-peda and disassembled the binary to have a deeper look into it. Disassembling the main function results into:
 ```
    gdb-peda$ disas main
    Dump of assembler code for function main:
@@ -134,7 +134,7 @@
       0x000008e2 <+361>:	ret    
    End of assembler dump.
 ```
-### We see that the prompts for the first two questions get user input via fgets, which is a quite secure way of getting user input. But the third question at address ```0x0000089b``` uses a gets() call for input, which is vulnerable to buffer overflow attacks. It is also important to note that the program also checks if the answer for the third question is equal to ```0xdea110c8``` before it proceeds to the ```print_flag``` function. So the exploit method for this challenge will be a buffer overflow into controlling an argument. But before we head that, we do a deeper analysis of the code block that happens before and after the gets call. 
+#### We see that the prompts for the first two questions get user input via fgets, which is a quite secure way of getting user input. But the third question at address ```0x0000089b``` uses a gets() call for input, which is vulnerable to buffer overflow attacks. It is also important to note that the program also checks if the answer for the third question is equal to ```0xdea110c8``` before it proceeds to the ```print_flag``` function. So the exploit method for this challenge will be a buffer overflow into controlling an argument. But before we head that, we do a deeper analysis of the code block that happens before and after the gets call. 
 ```
       0x000008a0 <+295>:	add    esp,0x10
       0x000008a3 <+298>:	sub    esp,0xc
@@ -144,7 +144,7 @@
       0x000008af <+310>:	add    esp,0x10
       0x000008b2 <+313>:	cmp    DWORD PTR [ebp-0x10],0xdea110c8
 ```
-### What this does is allocates space on the stack for some variables, which is the array buffer in this case, and pushes a pointer to ```[ebp-0x3b]``` , which is the address for the array buffer, on the stack. After the gets call, a compare instruction is done at address ```[ebp-0x10]``` if the contents is in fact equal to ```0xdea110c8```. So it becomes clearer that we have to overwrite the contents of ```[ebp-0x3b]``` to ```[ebp-0x10]```, which has a difference of 43 which is the offset we need to overflow the buffer. And we proceed with the exploitation.
+#### What this does is allocates space on the stack for some variables, which is the array buffer in this case, and pushes a pointer to ```[ebp-0x3b]``` , which is the address for the array buffer, on the stack. After the gets call, a compare instruction is done at address ```[ebp-0x10]``` if the contents is in fact equal to ```0xdea110c8```. So it becomes clearer that we have to overwrite the contents of ```[ebp-0x3b]``` to ```[ebp-0x10]```, which has a difference of 43 which is the offset we need to overflow the buffer. And we proceed with the exploitation.
 #### exploit.py
 ```python
    from pwn import *
@@ -169,7 +169,7 @@
    print(conn.recv())
    print(conn.recv())
 ```
-### And we then get the flag! 
+#### And we then get the flag! 
 ```
    Stop! Who would cross the Bridge of Death must answer me these questions three, ere the other side he see.
    What... is your name?
