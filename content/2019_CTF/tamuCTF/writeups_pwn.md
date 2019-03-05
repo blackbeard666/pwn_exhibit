@@ -3,10 +3,13 @@
 ## pwn1
 #### Assumeably the easiest among the pwn challenges, I started the approach by running the 32-bit executable. We get asked by a prompt which reads: 
 ```
+$ ./pwn1
    Stop! Who would cross the Bridge of Death must answer me these questions three, ere the other side he see. What... is your name?
 ```
 #### Given the prompt and disassembly from gdb, I deduced that there is a string check for these questions. So what I did was use the command line utility *strings* on the binary and I got answers for the first two questions:
 ```
+$ strings pwn1
+   [...]
    Stop! Who would cross the Bridge of Death must answer me these questions three, ere the other side he see.
    What... is your name?
    Sir Lancelot of Camelot
@@ -14,9 +17,11 @@
    What... is your quest?
    To seek the Holy Grail.
    What... is my secret?
+   [...]
 ```
 #### We now passed the first two questions, leaving us with only one more whose answer isn't shown up on strings or anywhere else. Fired up gdb-peda and disassembled the binary to have a deeper look into it. Disassembling the main function results into:
 ```
+$ gdb ./pwn1
    gdb-peda$ disas main
    Dump of assembler code for function main:
       0x00000779 <+0>:	    lea    ecx,[esp+0x4]
@@ -171,6 +176,8 @@
 ```
 #### And we then get the flag! 
 ```
+$ python exploit.py
+
    Stop! Who would cross the Bridge of Death must answer me these questions three, ere the other side he see.
    What... is your name?
 
