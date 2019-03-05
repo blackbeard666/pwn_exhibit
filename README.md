@@ -3,7 +3,7 @@ Temporary layout for now. If you know some webdev, please help me build the layo
 
 ## 2019
 * * *
-- tamuCTF
+- [tamuCTF](/content/2019_CTF/tamuCTF/writeups_pwn.md)
 
 ## 2018
 * * *
