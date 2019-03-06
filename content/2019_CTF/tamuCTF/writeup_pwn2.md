@@ -68,7 +68,7 @@ $ objdump -M intel -d pwn2 | grep print_flag
 ```
 #### We take a note that ```print_flag```'s address is at ```0x000006d8```. Next thing we need to know is the exact size of the buffer to trigger the segmentation fault. Though the buffer is stored at address ```[ebp-0x27]``` which has a size of 39, the exact offset to overflow the buffer and overwrite the eip register is at offset 34. We can now create a short exploit script and send the result to the server to get the flag.
 #### exploit.py
-```
+```python
 from pwn import *
 
 #: Connect to challenge server
