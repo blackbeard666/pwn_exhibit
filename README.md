@@ -6,6 +6,7 @@ Temporary layout for now. If you know some webdev, please help me build the layo
 - tamuCTF
     - [pwn1](/content/2019_CTF/tamuCTF/writeup_pwn1.md)
     - [pwn2](/content/2019_CTF/tamuCTF/writeup_pwn2.md)
+    - [pwn3](/content/2019_CTF/tamuCTF/writeup_pwn3.md)
     
 ## 2018
 * * *
