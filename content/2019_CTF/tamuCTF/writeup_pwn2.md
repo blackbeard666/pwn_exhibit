@@ -1,4 +1,5 @@
 ## pwn2
+##### *tl;dr: buffer overflow into overwrite eip to call print_flag function*
 #### Standard for all pwn challenges - we start a simple reconnaisance by using checksec
 ```
 $ checksec pwn2
