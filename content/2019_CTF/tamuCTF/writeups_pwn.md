@@ -3,6 +3,7 @@
 ## pwn1
 #### Assumeably the easiest among the pwn challenges, I started the approach by running some simple recon with the *checksec* utility from pwntools:
 ```
+$ checksec pwn1
     Arch:     i386-32-little
     RELRO:    Full RELRO
     Stack:    No canary found
