@@ -87,7 +87,7 @@ conn.sendline(exploit)
 print(conn.recvline())
 print(conn.recvline())
 ```
-### And the script returns us the flag!
+#### And the script returns us the flag!
 ```
 $ python exploit.py
 
