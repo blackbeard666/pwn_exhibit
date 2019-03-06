@@ -1,4 +1,3 @@
-
 ## pwn2
 #### Standard for all pwn challenges - we start a simple reconnaisance by using checksec
 ```
