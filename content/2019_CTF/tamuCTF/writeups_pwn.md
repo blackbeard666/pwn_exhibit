@@ -1,7 +1,15 @@
 # tamuCTF: pwn
 
 ## pwn1
-#### Assumeably the easiest among the pwn challenges, I started the approach by running the 32-bit executable. We get asked by a prompt which reads: 
+#### Assumeably the easiest among the pwn challenges, I started the approach by running some simple recon with the *checksec* utility from pwntools:
+```
+    Arch:     i386-32-little
+    RELRO:    Full RELRO
+    Stack:    No canary found
+    NX:       NX enabled
+    PIE:      PIE enabled
+```
+#### So we know we're dealing with a 32-bit binary with the following security measures added. *Add explanation*. Running the binary, we get the prompt:
 ```
 $ ./pwn1
    Stop! Who would cross the Bridge of Death must answer me these questions three, ere the other side he see. 
