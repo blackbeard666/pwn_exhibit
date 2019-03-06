@@ -1,4 +1,5 @@
 ## pwn3
+##### *tl;dr: buffer overflow to control function arguments*
 #### Making it a habit that whenever there's a pwn chall, we need to check the security measures first using the *checksec* utility from pwntools:
 ```
 $ checksec pwn3
