@@ -1,5 +1,5 @@
 # tamuCTF: pwn
-
+##### *tl;dr: buffer overflow to control function arguments*
 ## pwn1
 #### Assumeably the easiest among the pwn challenges, I started the approach by running some simple recon with the *checksec* utility from pwntools:
 ```
