@@ -261,3 +261,28 @@ $ gdb ./pwn2
        0x0000084e <+114>:	ret    
     End of assembler dump.
 ```
+#### Interestingly enough, a gets() call is executed to ask for the user input, which can be the entry point for our exploit. But another function to take note of is ```select_func``` which uses the buffer at ```[ebp-0x27]``` as the argument. Let's have a look at all the functions in the binary so we know what options are available for us to choose from:
+```
+gdb-peda$ info functions
+    [...]
+    0x000006ad  two
+    0x000006d8  print_flag
+    0x00000754  one
+    0x0000077f  select_func
+    0x000007dc  main
+    [...]
+```
+#### We see the functions main and select func, which we already know by disassembling the main function of the binary. And we see the interesting functions, one, two, and print_flag: if we try to input these options in the prompt, maybe it'll give us the flag of the challenge.
+```
+$ ./pwn2
+Which function would you like to call?
+one
+This is function one!
+
+$ ./pwn2
+two
+
+$ ./pwn2
+print_flag
+```
+
