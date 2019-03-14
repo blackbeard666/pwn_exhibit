@@ -1,4 +1,4 @@
-## pwn3
+## tamuCTF: pwn3
 ##### *tl;dr: buffer overflow to execute shellcode on the stack*
 #### Making it a habit that whenever there's a pwn chall, we need to check the security measures first using the *checksec* utility from pwntools:
 ```
