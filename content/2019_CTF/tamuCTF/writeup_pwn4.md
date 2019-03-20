@@ -34,12 +34,12 @@ $ ./pwn4
     -l
     Result of ls -l:
     total 32
-    -rw-r--r-- 1 venom venom  479 Mar  7 14:38 exploit.py
-    -rw-r--r-- 1 venom venom  214 Mar  7 02:55 exploit_unintended.py
-    -rw-r--r-- 1 venom venom   23 Feb 27 23:56 flag.txt
-    -rw-r--r-- 1 venom venom    7 Mar  7 14:18 peda-session-ls.txt
-    -rw-r--r-- 1 venom venom   12 Mar  7 14:34 peda-session-pwn4.txt
-    -rwxr-xr-x 1 venom venom 7504 Feb 20 02:45 pwn4
+    -rw-r--r-- 1 aries aries  479 Mar  7 14:38 exploit.py
+    -rw-r--r-- 1 aries aries  214 Mar  7 02:55 exploit_unintended.py
+    -rw-r--r-- 1 aries aries   23 Feb 27 23:56 flag.txt
+    -rw-r--r-- 1 aries aries    7 Mar  7 14:18 peda-session-ls.txt
+    -rw-r--r-- 1 aries aries   12 Mar  7 14:34 peda-session-pwn4.txt
+    -rwxr-xr-x 1 aries aries 7504 Feb 20 02:45 pwn4
 ```
 #### Interesting. It actually runs the ls utility and performs it with the specified arguments, but if we input random gibberish we get nothing. We don't know our exploit method yet, but we do know that the binary runs the ls process in a loop. Let's fire up gdb to understand what's happening a little bit more:
 ```
