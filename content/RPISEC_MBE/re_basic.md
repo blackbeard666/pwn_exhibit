@@ -135,5 +135,5 @@ $ ./crackme0x01
 ```
 #### crackme0x04
 #### In the lecture material, the instructors use and explain how to use IDA for disassembly. Sadly, I don't have IDA, but I do have GHIDRA. And this is what I'll be using to disassemble the binary. First we import the binary we'll be disassembling into the program. After it is imported, GHIDRA shows us the import results of the binary. Then we'll examine the functions of the binary using the code browser. 
-![import_results](pwn_exhibit/assets/RPISEC_PWN/RE_basic/crackme_0x04/1_import_result.png)
+![import_results](/assets/RPISEC_PWN/RE_basic/crackme_0x04/1_import_result.png)
 
