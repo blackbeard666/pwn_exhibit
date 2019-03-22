@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 ### Tools and Basic Reverse Engineering
 
 #### The first part of the course starts with a basic introduction of what reverse engineering is and what are the common tools used to reverse engineer (or RE) a binary. As discussed in the lecture slides, below are the tools that can be used for RE along with a short description of what it does which will be essential in solving the crackme challenges provided:
