@@ -13,6 +13,6 @@ Temporary layout for now. If you know some webdev, please help me build the layo
 * * *
 - [picoCTF/pwn](/content/2018_CTF/picoCTF/writeups_pwn.md)
 
-# Wargames
-## [RPISEC_Modern_Binary_Exploitation](/content/RPISEC_MBE/index.md)
+# Wargames and Learning
+[RPISEC_Modern_Binary_Exploitation](/content/RPISEC_MBE/index.md)
 
