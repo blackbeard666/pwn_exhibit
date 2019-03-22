@@ -1,5 +1,8 @@
-### Modern Binary
-### Exploitation
+---
+layout: default
+---
+
+### Modern Binary Exploitation
         
 ### |=----------------------------------------------------------------------------=|
 ### |=----------------------=[ Modern Binary Exploitation ]=----------------------=|
