@@ -89,5 +89,51 @@ $ strings -e L crackme0x00b
   Congrats!
 ```
 
-
+#### crackme0x01
+#### At this point, we'll be getting our hands dirty with a little bit of disassembly. Reverse engineering deals with breaking down a binary to figure out how it works on a low level. And to be able to do this, we need to 'disassemble' the binary in order to know its inner components. For this challenge, we'll be using objdump along with the intel syntax for asm. 
+```
+$ objdump -M intel -d crackme0x01
+  crackme0x01:     file format elf32-i386
+  [...]
+  080483e4 <main>:
+   80483e4:	55                   	push   ebp
+   80483e5:	89 e5                	mov    ebp,esp
+   80483e7:	83 ec 18             	sub    esp,0x18
+   80483ea:	83 e4 f0             	and    esp,0xfffffff0
+   80483ed:	b8 00 00 00 00       	mov    eax,0x0
+   80483f2:	83 c0 0f             	add    eax,0xf
+   80483f5:	83 c0 0f             	add    eax,0xf
+   80483f8:	c1 e8 04             	shr    eax,0x4
+   80483fb:	c1 e0 04             	shl    eax,0x4
+   80483fe:	29 c4                	sub    esp,eax
+   8048400:	c7 04 24 28 85 04 08 	mov    DWORD PTR [esp],0x8048528
+   8048407:	e8 10 ff ff ff       	call   804831c <printf@plt>
+   804840c:	c7 04 24 41 85 04 08 	mov    DWORD PTR [esp],0x8048541
+   8048413:	e8 04 ff ff ff       	call   804831c <printf@plt>
+   8048418:	8d 45 fc             	lea    eax,[ebp-0x4]
+   804841b:	89 44 24 04          	mov    DWORD PTR [esp+0x4],eax
+   804841f:	c7 04 24 4c 85 04 08 	mov    DWORD PTR [esp],0x804854c
+   8048426:	e8 e1 fe ff ff       	call   804830c <scanf@plt>
+   804842b:	81 7d fc 9a 14 00 00 	cmp    DWORD PTR [ebp-0x4],0x149a
+   8048432:	74 0e                	je     8048442 <main+0x5e>
+   8048434:	c7 04 24 4f 85 04 08 	mov    DWORD PTR [esp],0x804854f
+   804843b:	e8 dc fe ff ff       	call   804831c <printf@plt>
+   8048440:	eb 0c                	jmp    804844e <main+0x6a>
+   8048442:	c7 04 24 62 85 04 08 	mov    DWORD PTR [esp],0x8048562
+   8048449:	e8 ce fe ff ff       	call   804831c <printf@plt>
+   804844e:	b8 00 00 00 00       	mov    eax,0x0
+   8048453:	c9                   	leave  
+  [...]
+```
+#### objdump prints out the disassembly of every function in the binary, but I'll only be showing the disassembly of the main function since it's where the main execution of the binary starts. Given the disassembly, we'll analyze what happens with the instructions. The first two instructions are known as the prologue of the function. It stores the previous base pointer (ebp) and set the base pointer as it was the top of the stack. This means that all the stack contents is saved down the stack, so the function can push/pop in the stack. The third instruction creates space in the stack for the local variables. 
+#### Scrolling further down, a buffer of size 0x4 (4 bytes) is initialized and moved into the eax register with the instruction ```lea    eax,[ebp-0x4]```. After which, the scanf function is called which is gets the user input. When we have already inputted something into stdin, it is compared if it is equal to 0x149a (5274) and if it is equal, it jumps to the next instruction at address ```<main+0x6a>```. Now that we have disassembled the binary, it's time we input what we got. 
+```
+$ ./crackme0x01
+  IOLI Crackme Level 0x01
+  Password: 5274
+  Password OK :)
+```
+#### crackme0x04
+#### In the lecture material, the instructors use and explain how to use IDA for disassembly. Sadly, I don't have IDA, but I do have GHIDRA. And this is what I'll be using to disassemble the binary. First we import the binary we'll be disassembling into the program. After it is imported, GHIDRA shows us the import results of the binary. Then we'll examine the functions of the binary using the code browser. 
+![import_results](pwn_exhibit/assets/RPISEC_PWN/RE_basic/crackme_0x04/1_import_result.png)
 
