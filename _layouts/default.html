@@ -44,24 +44,19 @@
            border-right: none;
         }
     </style>
-    
-  </head>
-
+</head>
   <body>
-
     <header>
       <div class="container">
         <h1>{{ site.title | default: site.github.repository_name }}</h1>
         <h2>{{ site.description | default: site.github.project_tagline }}</h2>
       </div>
     </header>
-    
       <ul>
         <li> <a href="/">Home</a> </li>
-        <li> <a href="/">CTF Write_Ups</a> </li>
-        <li> <a href="/">Wargames</a> </li>
+        <li> <a href="/content/ctf_writeups.md">CTF Write_Ups</a> </li>
+        <li> <a href="/content/wargames.md">Wargames</a> </li>
       </ul>
-
     <div class="container">
       <section id="main_content">
         {{ content }}
