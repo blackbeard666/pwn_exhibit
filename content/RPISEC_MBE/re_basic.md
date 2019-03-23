@@ -1,4 +1,5 @@
 ### Tools and Basic Reverse Engineering
+##### *sidenote: these writeups are supposed to come with pictures, but won't load on this site so I just placed the important code needed. But if you want to read the writeup with the pictures, continue reading [here](https://github.com/arieees666/pwn_exhibit/blob/gh-pages/content/RPISEC_MBE/re_basic_with_pictures.md)*
 
 #### The first part of the course starts with a basic introduction of what reverse engineering is and what are the common tools used to reverse engineer (or RE) a binary. As discussed in the lecture slides, below are the tools that can be used for RE along with a short description of what it does which will be essential in solving the crackme challenges provided:
 ```
@@ -134,14 +135,51 @@ $ ./crackme0x01
   Password OK :)
 ```
 ### crackme0x04
-#### In the lecture material, the instructors use and explain how to use IDA for disassembly. Sadly, I don't have IDA, but I do have GHIDRA. And this is what I'll be using to disassemble the binary. First we import the binary we'll be disassembling into the program. After it is imported, GHIDRA shows us the import results of the binary. Then we'll examine the functions of the binary using the code browser. 
-![import_results](/assets/RPISEC_PWN/RE_basic/crackme_0x04/1_import_result.jpg)
-#### The code browser presents us with the decompiled code of the binary. We quickly search for the main function and examine the decompilation of it. 
-![decompiled_main](/assets/RPISEC_PWN/RE_basic/crackme_0x04/2_decompiled_main.jpg)
-#### As shown in the picture, the two main panes which we need to focus on is the decomiler pane which houses the decompiled code, and the listing pane, which shows the assembly instructions of the code. GHIDRA gives us the option to rename the variables in order for us to understand the program flow a little bit more, so let's rename some of the variables. 
-![labeled_main](/assets/RPISEC_PWN/RE_basic/crackme_0x04/3_edited.jpg)
+#### In the lecture material, the instructors use and explain how to use IDA for disassembly. Sadly, I don't have IDA, but I do have GHIDRA. And this is what I'll be using to disassemble the binary. First we import the binary we'll be disassembling into the program. After it is imported, GHIDRA shows us the import results of the binary. Then we'll examine the functions of the binary using the code browser. The code browser presents us with the decompiled code of the binary. We quickly search for the main function and examine the decompilation of it. 
+#### As shown in the pictures, the two main panes which we need to focus on is the decomiler pane which houses the decompiled code, and the listing pane, which shows the assembly instructions of the code. GHIDRA gives us the option to rename the variables in order for us to understand the program flow a little bit more, so let's rename some of the variables. 
+```c
+undefined4 main(void)
+
+{
+  undefined buffer [120];
+  
+  printf("IOLI Crackme Level 0x04\n");
+  printf("Password: ");
+  scanf("%s",buffer);
+  check(buffer);
+  return 0;
+}
+```
 #### We have labeled the buffer variable so we can be able to easily recognize it. Now analyzing the code, we see that the buffer variable is a string buffer of size 120 is initialized, then the function proceeds prints out some stuff and get user input via scanf and stores it into the buffer variable. After which, a call to a ```check``` function is performed where the buffer is supplied in as an argument. Next step we need to do is to analyze and rename the variables in this check function.
-![check_decompiled](/assets/RPISEC_PWN/RE_basic/crackme_0x04/4_decompile_check.jpg)
+```c
+void check(char *buffer_argument)
+
+{
+  size_t buffer_length;
+  char char_from_index;
+  uint increment;
+  int goal;
+  int add_to_goal;
+  
+  goal = 0;
+  increment = 0;
+  while( true ) {
+    buffer_length = strlen(buffer_argument);
+    if (buffer_length <= increment) {
+      printf("Password Incorrect!\n");
+      return;
+    }
+    char_from_index = buffer_argument[increment];
+    sscanf(&char_from_index,"%d",&add_to_goal);
+    goal = goal + add_to_goal;
+    if (goal == 0xf) break;
+    increment = increment + 1;
+  }
+  printf("Password OK!\n");
+                    /* WARNING: Subroutine does not return */
+  exit(0);
+}
+```
 #### Examining the code, we see that some variables are declared and initialized such as the ones we renamed goal and increment which are set to 0. What follows is a while loop which runs forever until stopped, and inside the loop there is a conditional statement that checks wheter the buffer_length variable is less than or equal the increment variable - if it is, then the password we input is wrong. From this alone, we can be able to deduce that the password must be long/greater than the the value of increment.
 #### When the code passes the check, the char_from_index is given the value of the character at index increment of the buffer argument. After the initialization of the char_from_index variable, a ```sscanf()``` function is called. sscanf reads formatted data from a string and stores them according to parameter format into the locations given by the additional arguments. On success, the function returns the number of items in the argument list successfully filled. In the code, we see that the arguments supplied into the function call are the address of char_from_index, a %d format specifier which specifies that the argument is an integer, and the address of add_to_goal which the result of the function will be stored. Whatever the function returns, it will be added to the goal variable, and it will be checked if it is equal to 0xf (15). If it is, then we have the correct password, else the increment variable will be incremented and the loop will run again. So what we have to do now is to supply a string, which contains numeric characters, that when run against the loop will add the number at the current increment index to the goal variable and we need to make the value of the goal variable to 0xf (15).
 #### We can do this by supplying the number 1 with a string length of fifteen to achieve the results we want. Remember that sscanf reads a character at the current increment index, converts it into an int using the %d specifier and stores it to add_to_goal? We can continuously add 1 to the goal variable and achieve a sum of 15 just by doing this. So let's have a try at it:
