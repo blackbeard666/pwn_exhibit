@@ -8,57 +8,58 @@
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
 
 {% seo %}
-      <!--<style>
-        ul {
-          list-style-type: none;
-          margin: 0;
-          padding: 0;
-          overflow: hidden;
-          background-color: #333;
-          position: -webkit-sticky; /* Safari */
-          position: sticky;
-          top: 0;
-        }
+      <style>
+        nav{
+          ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+            position: -webkit-sticky; /* Safari */
+            position: sticky;
+            top: 0;
+          }
 
-        li {
-          float: left;
-          border-right: 1px solid #bbb;
-        }
+          li {
+            float: left;
+            border-right: 1px solid #bbb;
+          }
 
-        li a {
-          display: block;
-          color: white;
-          text-align: center;
-          padding: 14px 16px;
-          text-decoration: none;
-        }
+          li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+          }
 
-        li a:hover {
-          background-color: #111;
+          li a:hover {
+            background-color: #111;
+          }
+
+          .active {
+             background-color: #4CAF50;
+          }
+          li:last-child {
+             border-right: none;
+          }
         }
-        
-        .active {
-           background-color: #4CAF50;
-        }
-        li:last-child {
-           border-right: none;
-        }
-    </style>-->
+    </style>
 </head>
   <body>
     <header>
       <div class="container">
-        <!-- <h1>{{ site.title | default: site.github.repository_name }}</h1> -->
-        <a = href"./"><h1>./pwn_exhibit</h1></a>
+        <h1>{{ site.title | default: site.github.repository_name }}</h1>
         <h2>{{ site.description | default: site.github.project_tagline }}</h2>
       </div>
     </header>
 
-    <!--<nav>
+    <nav>
       <a href="./">Home</a>
       <a href="./content/ctf_writeups.md">CTF Write_Ups</a>
       <a href="./content/wargames.md">Wargames</a>
-    </nav>-->
+    </nav>
     
     <div class="container">
       <section id="main_content">
