@@ -14,7 +14,7 @@ Disassembly
 ```
 #### I'll also be using NSA's software RE tool, GHIDRA, in some problems, just to familiarize myself with the tool and be able to use it for ctfs in the upcoming days. Now that we know some of the basic tools and their functionalities, let's head on to the crackmes:
 
-#### crackme0x00a
+### crackme0x00a
 #### As listed on the slides, the challenge can be solvable using ```xxd``` and ```strings```, so we'll do that. First, we use the xxd utility to print a hex dump of the binary and search for interesting things:
 ```
 $ xxd crackme0x00a
@@ -45,7 +45,7 @@ $ ./cracme0x00a
   Congrats!
 ```
 
-#### crackme0x00b
+### crackme0x00b
 #### This challenge can be solved using strings, but we need to specify some arguments. Let's take a look:
 ```
 $ strings crackme0x00b
@@ -89,7 +89,7 @@ $ strings -e L crackme0x00b
   Congrats!
 ```
 
-#### crackme0x01
+### crackme0x01
 #### At this point, we'll be getting our hands dirty with a little bit of disassembly. Reverse engineering deals with breaking down a binary to figure out how it works on a low level. And to be able to do this, we need to 'disassemble' the binary in order to know its inner components. For this challenge, we'll be using objdump along with the intel syntax for asm. 
 ```
 $ objdump -M intel -d crackme0x01
@@ -133,7 +133,7 @@ $ ./crackme0x01
   Password: 5274
   Password OK :)
 ```
-#### crackme0x04
+### crackme0x04
 #### In the lecture material, the instructors use and explain how to use IDA for disassembly. Sadly, I don't have IDA, but I do have GHIDRA. And this is what I'll be using to disassemble the binary. First we import the binary we'll be disassembling into the program. After it is imported, GHIDRA shows us the import results of the binary. Then we'll examine the functions of the binary using the code browser. 
 ![import_results](/assets/RPISEC_PWN/RE_basic/crackme_0x04/1_import_result.png)
 #### The code browser presents us with the decompiled code of the binary. We quickly search for the main function and examine the decompilation of it. 
