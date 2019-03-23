@@ -1,7 +1,3 @@
----
-layout: default
---- 
-
 ## 2019
 * * *
 - tamuCTF
