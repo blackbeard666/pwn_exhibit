@@ -141,4 +141,4 @@ $ ./crackme0x01
 #### As shown in the picture, the two main panes which we need to focus on is the decomiler pane which houses the decompiled code, and the listing pane, which shows the assembly instructions of the code. GHIDRA gives us the option to rename the variables in order for us to understand the program flow a little bit more, so let's rename some of the variables. 
 ![labeled_main](/assets/RPISEC_PWN/RE_basic/crackme_0x04/3_edited.png)
 #### We have labeled the buffer variable so we can be able to easily recognize it. Now analyzing the code, we see that the buffer variable is a string buffer of size 120 is initialized, then the function proceeds prints out some stuff and get user input via scanf and stores it into the buffer variable. After which, a call to a ```check``` function is performed where the buffer is supplied in as an argument. Next step we need to do is to analyze and rename the variables in this check function.
-
+![check_decompiled](/assets/RPISEC_PWN/RE_basic/crackme_0x04/4_decompile_check.png)
