@@ -51,12 +51,14 @@
         <h1>{{ site.title | default: site.github.repository_name }}</h1>
         <h2>{{ site.description | default: site.github.project_tagline }}</h2>
       </div>
-      <ul>
+    </header>
+    <div class="container">
+        <ul>
         <li> <a href="./">Home</a> </li>
         <li> <a href="./content/ctf_writeups.md">CTF Write_Ups</a> </li>
         <li> <a href="./content/wargames.md">Wargames</a> </li>
       </ul>
-    </header>
+    </div>
     <div class="container">
       <section id="main_content">
         {{ content }}
