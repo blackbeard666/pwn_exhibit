@@ -43,8 +43,8 @@ $ gdb ./crackme0x00a
        0x08048568 <+132>:	ret    
     End of assembler dump.
  ```
- #### Looking at the assembly code, we see some similar function calls such as printf which just prints something into our standard input. What we should be interested in begins at address ```0x0804850b``` - we see an lea instruction which initializes a pointer to our buffer with a size of 0x13 then we see 2 mov instructions moving stuff into the stack, after which a scanf is called to get user input. Whatever we input, is loaded next into the eax register, which is eventually moved into ```[esp+0x4]```, the value at 0x0x804a024 is then moved into the stack, and gets compared using the ```strcmp``` function. So what we have to do now is set a breakpoint before the compare, run to the next instruction, and examine the stack values. 
- ```
+#### Looking at the assembly code, we see some similar function calls such as printf which just prints something into our standard input. What we should be interested in begins at address ```0x0804850b``` - we see an lea instruction which initializes a pointer to our buffer with a size of 0x13 then we see 2 mov instructions moving stuff into the stack, after which a scanf is called to get user input. Whatever we input, is loaded next into the eax register, which is eventually moved into ```[esp+0x4]```, the value at 0x0x804a024 is then moved into the stack, and gets compared using the ```strcmp``` function. So what we have to do now is set a breakpoint before the compare, run to the next instruction, and examine the stack values. 
+```
 gdb-peda$ break *0x0804852a
   Breakpoint 1 at 0x804852a
 gdb-peda$ r
@@ -63,8 +63,8 @@ gdb-peda$ r
   [------------------------------------------------------------------------------]
     Breakpoint 1, 0x0804852a in main ()
  ```
- #### When we hit the breakpoint, gdb-peda automatically shows us values that are on the stack. And having a look at it, the password that we entered is stored at ```[esp+0x4]``` as we can see there it is. And the password that it is being compared to, which is loaded from 0x804a024, is the string 'g00dJ0B!'. We can now input this password and proceed with the next task:
- ```
+#### When we hit the breakpoint, gdb-peda automatically shows us values that are on the stack. And having a look at it, the password that we entered is stored at ```[esp+0x4]``` as we can see there it is. And the password that it is being compared to, which is loaded from 0x804a024, is the string 'g00dJ0B!'. We can now input this password and proceed with the next task:
+```
  $ ./crackme0x00a
   Enter password: g00dJ0B!
   Congrats!
