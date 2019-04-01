@@ -110,6 +110,6 @@ print(p.recv())
 #### Then we run it to get the flag!
 ```
 $ python exploit.py
-    WELCOME TO THE RING!
-    sun{0V3rfl0w_rUn_w!Ld_br0th3r}
+WELCOME TO THE RING!
+sun{0V3rfl0w_rUn_w!Ld_br0th3r}
 ```
