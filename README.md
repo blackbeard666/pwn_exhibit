@@ -1,6 +1,10 @@
 # CTF Writeups
 ## 2019
 * * *
+- EncryptCTF
+    - pwn0
+    - pwn1
+    
 - SunshineCTF
     - [Return To Mania](/content/2019_CTF/sunshineCTF/writeup_pwn1.md)
      
