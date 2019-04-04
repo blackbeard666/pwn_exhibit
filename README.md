@@ -2,8 +2,9 @@
 ## 2019
 * * *
 - EncryptCTF
-    - pwn0
-    - pwn1
+    - [pwn0](/content/2019_CTF/encryptCTF/writeup_pwn0.md)
+    - [pwn1](/content/2019_CTF/encryptCTF/writeup_pwn1.md)
+    - [pwn2](/content/2019_CTF/encryptCTF/writeup_pwn2.md)
     
 - SunshineCTF
     - [Return To Mania](/content/2019_CTF/sunshineCTF/writeup_pwn1.md)
