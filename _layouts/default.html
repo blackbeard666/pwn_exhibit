@@ -8,55 +8,19 @@
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
 
 {% seo %}
-      <style>
-          nav ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            background-color: #333;
-            position: -webkit-sticky; /* Safari */
-            position: sticky;
-            top: 0;
-          }
-
-          nav li {
-            float: left;
-            border-right: 1px solid #bbb;
-          }
-
-          nav li a {
-            display: block;
-            color: white;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-          }
-
-          nav li a:hover {
-            background-color: #111;
-          }
-
-          nav .active {
-             background-color: #4CAF50;
-          }
-          nav li:last-child {
-             border-right: none;
-          }
-    </style>
 </head>
   <body>
     <header>
       <div class="container">
         <h1>{{ site.title | default: site.github.repository_name }}</h1>
         <h2>{{ site.description | default: site.github.project_tagline }}</h2>
+        
+        <section id="downloads">
+          <a href="/pwn_exhibit/" class="btn">Home</a>
+          <a href="/raw_solves/" class="btn">CTF Writeups</a>
+          <a href="#wargames-and-learning" class="btn">Wargames</a>
+        </section>
       </div>
-     
-      <section id="downloads">
-        <a href="/pwn_exhibit/" class="btn">Home</a>
-        <a href="#ctf-writeups" class="btn">CTF Writeups</a>
-        <a href="#wargames-and-learning" class="btn">Wargames</a>
-      </section>
                                                         
     </header>
 
