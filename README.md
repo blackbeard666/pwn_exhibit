@@ -1,6 +1,9 @@
 # CTF Writeups
 ## 2019
 * * *
+- TJCTF
+    - [Silly Sledshop](/content/2019_CTF/TJCTF/writeup_pwn1.md)
+    
 - EncryptCTF
     - [pwn0](/content/2019_CTF/encryptCTF/writeup_pwn0.md)
     - [pwn1](/content/2019_CTF/encryptCTF/writeup_pwn1.md)
