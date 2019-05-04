@@ -4,7 +4,8 @@
 - AngstromCTF
     - [Aquarium](/content/2019_CTF/angstromCTF/writeup_pwn0.md)
     - [Chain of Rope](/content/2019_CTF/angstromCTF/writeup_pwn1.md)
-    
+    - [Purchases](/content/2019_CTF/angstromCTF/writeup_pwn2.md)
+
 - TJCTF
     - [Silly Sledshop](/content/2019_CTF/TJCTF/writeup_pwn1.md)
     
