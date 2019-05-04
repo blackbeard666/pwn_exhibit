@@ -26,9 +26,3 @@
 ## 2018
 * * *
 - [PicoCTF/pwn](/content/2018_CTF/picoCTF/writeups_pwn.md)
-
-# Wargames and Learning
-
-- RPISEC_Modern_Binary_Exploitation
-    - Lesson 1: [Tools and Basic Reverse Engineering](/content/RPISEC_MBE/re_basic.md)
-    - Lesson 2: [Extended Reverse Engineering](/content/RPISEC_MBE/re_extended.md)
