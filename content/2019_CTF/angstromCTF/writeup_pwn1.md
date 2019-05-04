@@ -1,6 +1,7 @@
 ## AngstromCTF: Chain of Rope
 > defund found out about this cool new dark web browser! While he was browsing the dark web he came across this service that sells rope chains on the black market, but they're super overpriced! He managed to get the source code. Can you get him a rope chain without paying?
 
+
 ##### *tl;dr: chaining rop gadgets*
 #### Guessing from the challenge title itself, this challenge will be solved by chaining together rop gadgets found inside the binary to get the flag. For the exploit, it can be done the hard way or the much easier way. I'll discuss the hard way first to have an understading on how to perform a simple rop chain on a 64-bit binary. 
 #### Since we have the source code, first thing to do is to examine it:
