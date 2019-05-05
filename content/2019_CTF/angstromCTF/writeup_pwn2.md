@@ -43,6 +43,10 @@ int main() {
 #### A format string exploit could be executed when the application doesn’t properly validate the submitted input. For example, if a format string parameter, like %x, is inserted into the posted data, the string is parsed by the format function, and the conversion specified in the parameters is executed. However, the format function is expecting more arguments as input, and if these arguments are not supplied, the function could read or write the stack. 
 #### To have a better understanding of how we will exploit this challenge, here are quick links to `LiveOverflow`'s videos on format string exploitation:
 > [A simple Format String exploit example - bin 0x11](https://www.youtube.com/watch?v=0WvrSfcdq1I&list=PLhixgUqwRTjxglIswKp9mpkfPNfHkzyeN&index=18)
+
 > [Global Offset Table (GOT) and Procedure Linkage Table (PLT) - bin 0x12](https://www.youtube.com/watch?v=kUk5pw4w0h4&list=PLhixgUqwRTjxglIswKp9mpkfPNfHkzyeN&index=19)
+
 > [Format String Exploit and overwrite the Global Offset Table - bin 0x13](https://www.youtube.com/watch?v=t1LH9D5cuK4&list=PLhixgUqwRTjxglIswKp9mpkfPNfHkzyeN&index=20)
+
 > [Adapting the 32bit exploit to 64bit for format4 - bin 0x27](https://www.youtube.com/watch?v=_lO_rwaK_pY&list=PLhixgUqwRTjxglIswKp9mpkfPNfHkzyeN&index=42)
+
