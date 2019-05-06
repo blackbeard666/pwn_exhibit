@@ -55,9 +55,9 @@ int main() {
 $ gdb ./purchases
 	gdb-peda$ disas printf
 	Dump of assembler code for function puts@plt:
-    0x0000000000401030 <+0>:	jmp    QWORD PTR [rip+0x2fe2]        # 0x404018
-    0x0000000000401036 <+6>:	push   0x0
-    0x000000000040103b <+11>:	jmp    0x401020
+		0x0000000000401030 <+0>:	jmp    QWORD PTR [rip+0x2fe2]        # 0x404018
+		0x0000000000401036 <+6>:	push   0x0
+		0x000000000040103b <+11>:	jmp    0x401020
 	End of assembler dump..
 	
 	gdb-peda$ p flag
@@ -65,10 +65,10 @@ $ gdb ./purchases
 	
 	gdb-peda$ disas main
 	  [...]
-    0x000000000040131a <+337>:	call   0x401080 <printf@plt>
-    0x000000000040131f <+342>:	lea    rdi,[rip+0xdda]        # 0x402100
-    0x0000000000401326 <+349>:	call   0x401030 <puts@plt>
-    0x000000000040132b <+354>:	mov    eax,0x0
+		0x000000000040131a <+337>:	call   0x401080 <printf@plt>
+		0x000000000040131f <+342>:	lea    rdi,[rip+0xdda]        # 0x402100
+		0x0000000000401326 <+349>:	call   0x401030 <puts@plt>
+		0x000000000040132b <+354>:	mov    eax,0x0
 	  [...]
 	
 	gdb-peda$ break *0x0000000000401326
