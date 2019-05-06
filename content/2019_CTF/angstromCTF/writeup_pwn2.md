@@ -92,4 +92,4 @@ $ gdb ./purchases
 	Cannot insert breakpoint 1.
 	Cannot access memory at address 0x401326
 ```
-#### What we did right here was
+#### To talk you through what just happened, first we disassembled the puts function and saw that the first thing it does is to jump to it's GOT entry address, `0x404018`. Now that we have the GOT address for puts, we printed out the address for flag, set a breakpoint before our puts call. After we hit the breakpoint, we set the contents of the GOT address to flag's address, then we validate if we have successfully overwriten the value. Continuing the process, the binary executes /bin/dash and proceeds to call the flag function.
