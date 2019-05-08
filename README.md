@@ -23,6 +23,10 @@
     - [pwn2](/content/2019_CTF/tamuCTF/writeup_pwn2.md)
     - [pwn3](/content/2019_CTF/tamuCTF/writeup_pwn3.md)
     - [pwn4](/content/2019_CTF/tamuCTF/writeup_pwn4.md)
+
+- FireshellCTF
+    - [Casino] 
+    - [Leakless]
     
 ## 2018
 * * *
