@@ -31,4 +31,4 @@
 ## 2018
 * * *
 - XMASCTF
-    - [Greetings from Santa]
+    - [Greetings from Santa](/content/2018_CTF/XMASCTF/writeup_greetings_from_santa.md)
