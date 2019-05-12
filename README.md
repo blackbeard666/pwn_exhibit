@@ -14,6 +14,7 @@
     - [pwn1](/content/2019_CTF/encryptCTF/writeup_pwn1.md)
     - [pwn2](/content/2019_CTF/encryptCTF/writeup_pwn2.md)
     - [pwn3](/content/2019_CTF/encryptCTF/writeup_pwn3.md)
+    - [pwn4](/content/2019_CTF/encryptCTF/writeup_pwn4.md)
     
 - SunshineCTF
     - [Return To Mania](/content/2019_CTF/sunshineCTF/writeup_return_to_mania.md)
