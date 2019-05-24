@@ -140,7 +140,7 @@ $ ldd casino
 from ctypes import *
 libc = cdll.LoadLibrary('/lib/x86_64-linux-gnu/libc.so.6')
 seed = libc.time(0) / 10
-libc.srand(seed + 9
+libc.srand(seed + 9)
 libc.rand()
 ```
 #### Combining all our little exploits, we get our final exploit script:
