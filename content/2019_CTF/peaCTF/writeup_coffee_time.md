@@ -5,7 +5,7 @@
 #### I've been away from the security scene for quite sometime, and this is the first CTF that I've joined since April. Having goals of becoming a Malware Analyst, I thought of learning more RE by focusing on this category during such challenges. 
 
 ## Analysis
-#### Starting off, we are given a java .jar file which we are supposed to run in a vm as stated in the description, but we'll be doing it in our local machine anyways *absolute madlad*. Running the application takes a while and presents us a randomly generated number whose value raised to 10000 we need to compute while being given a very short amount of time to solve it. Even if we did write a short script to solve the problem, it would take a large amount of time to compute the result making the effort useless since we are under time pressure.
+#### Starting off, we are given a java .jar file which we are supposed to run in a vm as stated in the description, but we'll be doing it in our local machine anyways *absolute madlad*. Running the application takes a while and presents us a randomly generated number whose value raised to 10000 we need to compute while being given a very short period of time to solve it. Even if we did write a short script to solve the problem, it would take a large amount of time to compute the result making the effort useless since we are under time pressure.
 
 ## Reversing
 #### What I ended up doing was loading the application into [jadx](https://github.com/skylot/jadx), thus getting a decompiled version of it. Scanning through the subdirectories, we locate the main source file which houses the logic as well as the flag for the challenge.
