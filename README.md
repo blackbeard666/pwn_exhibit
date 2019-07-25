@@ -32,8 +32,3 @@
 - FireshellCTF
     - [Casino](/content/2019_CTF/fireshellCTF/writeup_casino.md)
     - [Leakless](/content/2019_CTF/fireshellCTF/writeup_leakless.md)
-    
-## 2018
-* * *
-- XMASCTF
-    - [Greetings from Santa](/content/2018_CTF/XMASCTF/writeup_greetings_from_santa.md)
