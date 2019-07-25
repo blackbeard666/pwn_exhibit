@@ -56,8 +56,8 @@ print(p.recv())
 encoded_text = ']_HZGUcHTURWcUQc[SUR[cHSc^YcOU_WA'
 decoded_text = ''
 
-for i in range(len(encoded_text)):
-	decoded_text += chr(ord(encoded_text[i]) ^ 0x3c)
+for letter in encoded_text:
+	decoded_text += chr(ord(letter) ^ 0x3c)
 
 print(decoded_text)
 
