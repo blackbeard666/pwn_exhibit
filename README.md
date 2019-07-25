@@ -8,6 +8,7 @@
     - [Aquarium](/content/2019_CTF/angstromCTF/writeup_aquarium.md)
     - [Chain of Rope](/content/2019_CTF/angstromCTF/writeup_chain_of_rope.md)
     - [Purchases](/content/2019_CTF/angstromCTF/writeup_purchases.md)
+    - [One Bite](/content/2019_CTF/angstromCTF/writeup_one_bite.md)
 
 - TJCTF
     - [Silly Sledshop](/content/2019_CTF/TJCTF/writeup_silly_sledshop.md)
