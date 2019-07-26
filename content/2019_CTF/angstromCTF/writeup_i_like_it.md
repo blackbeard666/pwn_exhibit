@@ -8,10 +8,10 @@
 ```
 gdb-peda$ disas main 
 Dump of assembler code for function main:
-   0x00000000004007a6 <+0>:	  push   rbp
-   0x00000000004007a7 <+1>:	  mov    rbp,rsp
-   0x00000000004007aa <+4>:	  sub    rsp,0x50
-   0x00000000004007ae <+8>:	  mov    DWORD PTR [rbp-0x44],edi
+   0x00000000004007a6 <+0>:	push   rbp
+   0x00000000004007a7 <+1>:   mov    rbp,rsp
+   0x00000000004007aa <+4>:	sub    rsp,0x50
+   0x00000000004007ae <+8>:	mov    DWORD PTR [rbp-0x44],edi
    0x00000000004007b1 <+11>:	mov    QWORD PTR [rbp-0x50],rsi
    0x00000000004007b5 <+15>:	mov    rax,QWORD PTR fs:0x28
    0x00000000004007be <+24>:	mov    QWORD PTR [rbp-0x8],rax
@@ -94,4 +94,51 @@ End of assembler dump.
 ```
 gdb-peda$ x/s 0x4009a1
 "okrrrrrrr"
+```
+#### Since we have provided the correct answer, the code flaw jumps to the address `400824` which then proceeds to get two space-separated integers, checks if their sum is equal to `0x88` and if multiplied results to `0xec7`. A final check is done to determine if the first number is less than the second one. To solve this, I created a short script to generate the numbers for us and send it to the challenge server.
+##### rev.py
+```python
+from pwn import *
+
+#: Connect to challenge server
+binary = ELF('./i_like_it', checksec=False)
+p = binary.process()
+context.log_level = 'error'
+print(p.recv())
+
+#: Helper function
+def cardi_numbers():
+
+	multiply_res = 0xec7
+	addition_res = 0x88
+
+	for i in range(1, multiply_res // 2):
+		factor1 = 0
+		factor2 = 0
+
+		if multiply_res % i == 0:
+			factor1 = multiply_res // i
+			factor2 = multiply_res // factor1
+
+		if factor1 + factor2 == addition_res and factor1 < factor2:
+			return(factor1, factor2)
+
+cardi1, cardi2 = cardi_numbers()
+
+#: Send payload
+p.sendline('okrrrrrrr')
+print(p.recv())
+p.sendline('{} {}'.format(cardi1, cardi2))
+print(p.recv())
+```
+#### Running the script gets us the flag composed of our answers.
+```
+$ python rev.py
+I like the string that I'm thinking of: 
+
+I said I like it like that!
+I like two integers that I'm thinking of (space separated): 
+
+I said I like it like that!
+Flag: actf{okrrrrrrr_39_97}
 ```
