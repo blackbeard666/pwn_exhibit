@@ -4,6 +4,11 @@
 - PeaCTF
     - [Coffee Time](/content/2019_CTF/peaCTF/writeup_coffee_time.md)
     
+- HSCTF
+    - A Byte
+    - License
+    - DaHeck
+    
 - AngstromCTF
     - [Aquarium](/content/2019_CTF/angstromCTF/writeup_aquarium.md)
     - [Chain of Rope](/content/2019_CTF/angstromCTF/writeup_chain_of_rope.md)
