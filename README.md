@@ -5,7 +5,7 @@
     - [Coffee Time](/content/2019_CTF/peaCTF/writeup_coffee_time.md)
     
 - HSCTF
-    - A Byte
+    - [A Byte](/content/2019_CTF/HSCTF/writeup_a_byte.md)
     - License
     - DaHeck
     
