@@ -34,7 +34,7 @@ gdb-peda$ pdisas 0x0000000000000630,0x0000000000000922
    0x0000000000000796:	cmp    DWORD PTR [rbp-0x3c],0x23
 ```
 #### We see that the content of `rbp-0x44` is checked if it is equal to 0x2. What this is is the number of arguments which needs to be passed as a command line argument in order for the binary to run. After which, it gets moved to serve as an argument to the strlen function and is checked if it's length is equal to 0x23 (35). 
-```
+```asm
    0x000000000000079c:	mov    DWORD PTR [rbp-0x40],0x0
    0x00000000000007a3:	jmp    0x7cd
    0x00000000000007a5:	mov    eax,DWORD PTR [rbp-0x40]
@@ -94,4 +94,16 @@ gdb-peda$ pdisas 0x0000000000000630,0x0000000000000922
    0x000000000000086d:	mov    rsi,rdx
    0x0000000000000870:	mov    rdi,rax
    0x0000000000000873:	call   0x610 <strcmp@plt>
+```
+#### Scrolling further down, we see that the buffer that we provide as the argument for the binary is run in a for loop wherein every character is XOR'ed with `0x1` which is then compared if it is equal to the long string stored at `rbp-0x30`. Given that XOR is reversible, what we can do is to take note of all of these characters loaded into rbp, XOR them with 1 and see the result. For this I created a short script:
+##### rev.py
+```python
+#: Stack content
+stack = [0x69, 0x72, 0x62, 0x75, 0x67, 0x7a, 0x76, 0x31, 0x76, 0x5e, 0x78, 0x31, 0x74, 0x5e, 0x6a, 0x6f, 0x31, 0x76, 0x5e, 0x76, 0x40, 0x32, 0x5e, 0x39, 0x69, 0x33, 0x63, 0x40, 0x31, 0x33, 0x38, 0x7c, 0]
+print(''.join(chr(offset ^ 1) for offset in stack))
+```
+#### Running the script outputs the flag for us. Easy.
+```
+$ python rev.py
+hsctf{w0w_y0u_kn0w_wA3_8h2bA029
 ```
