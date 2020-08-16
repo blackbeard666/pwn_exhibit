@@ -2,7 +2,7 @@
 ## 2020
 * * *
 - Arab Sec Cyber Wargames Qualifiers
-    - check
+    - [check](/content/2020_CTF/ArabSecCWG/writeup_check.md)
     - DOOM
 
 - PoseidonCTF
