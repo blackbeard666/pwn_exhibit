@@ -1,4 +1,5 @@
 ## Arab Sec Cyber Wargames: check
+##### category: Reverse Engineering
 ##### *tl;dr: control environment variables to print out flag*
 
 #### [hacker's log]: It's almost been a year after I played a CTF due to the fact that the old laptop I was using broke. Now that I was given a new one, I wanted to play CTFs immediately but forgot how to solve challs. For real this time, I want to polish my skills in RE and PWN.
