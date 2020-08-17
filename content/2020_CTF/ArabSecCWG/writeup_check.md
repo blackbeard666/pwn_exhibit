@@ -14,4 +14,4 @@ $ ./check
 [-] Checking machine...
 [×] Machine not OK.
 ```
-#### We have a stripped binary which is a pain in the ass to reverse. Continue later.
+#### We have a stripped binary which is a pain in the ass to reverse. Loaded up the binary in IDA (first time ill be using it) and thoroughly reversed each part of the program. 
