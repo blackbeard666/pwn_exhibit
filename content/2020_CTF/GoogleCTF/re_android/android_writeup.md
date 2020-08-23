@@ -90,6 +90,7 @@ public class C0000 extends Activity {
     }
 }
 ```
-#### Continue here...
+#### My approach was to go through the code line by line and analyze its functionality. The class initializer sets an f0class array that contains seemingly "magic" values. Then we see recognizable ascii values being loaded up into a `keyString` variable. Quickly creating a script to print out their character representations reveal that it is a fake flag: "Apparently this is not the flag. What's going on?".
+![](butthole.jpg)
 
 
