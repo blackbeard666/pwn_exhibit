@@ -1,4 +1,4 @@
-#: googleCTF
+#: GoogleCTF: Android - Check if valid flag
 
 def m0(a, b):
 	if a == 0:
