@@ -1,5 +1,5 @@
 ## Google CTF 2020: Android
-##### category: REVERSE ENGINEERING
+##### category: reversing
 > Can you find the correct key to unlock this app?
 
 ##### *tl;dr: a few minutes of reversing the algorithm, 1 hour & 30 mins for sore bruteforcing*
