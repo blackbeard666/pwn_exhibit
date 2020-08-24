@@ -2,7 +2,7 @@
 ## 2020
 * * *
 - Google CTF
-    - Android
+    - Android(/content/2020_CTF/GoogleCTF/re_android/android_writeup.md)
 - Arab Sec Cyber Wargames Qualifiers
     - [check](/content/2020_CTF/ArabSecCWG/writeup_check.md)
     - DOOM
