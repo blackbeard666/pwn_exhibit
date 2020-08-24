@@ -1,5 +1,6 @@
 ## Google CTF 2020: Android
 > Can you find the correct key to unlock this app?
+> ![reverse.apk](reverse.apk)
 
 ##### *tl;dr: a few minutes of reversing the algorithm, 1 hour & 30 mins for sore bruteforcing*
 
