@@ -1,12 +1,12 @@
 ## Google CTF 2020: Android
+##### category: REVERSE ENGINEERING
 > Can you find the correct key to unlock this app?
-> ![reverse.apk](reverse.apk)
 
 ##### *tl;dr: a few minutes of reversing the algorithm, 1 hour & 30 mins for sore bruteforcing*
 
 #### This challenge marked a lot of firsts for me as a CTF player: first time joining a team to compete with (OpenToAll) despite me being beginner-level at best and capturing a flag for them; first time I solved a main challenge from Google CTF (I assumed this was a non-beginner challenge since there were no beginner's quest challenges this year and this was not marked as easy in the challenge description). I had fun reversing, scripting a keygen for the challenge, and writing this writeup. For me, this is a milestone and one of the reasons for me to keep grinding, sharpening my skillset to be on par with the greatest players/teams in the world and hopefully be a decorated exploit developer in the near future.
 
-### APK Static Analysis
+### 0x00: APK Static Analysis
 #### Seeing that we were given an apk to reverse, my plan was to first decompile the apk with jadx-gui and have a peek at the source code. If there were interesting stuff that were referenced but not included in the result, I would then open the apk with apktool. The following 86 lines of code are what seems to be the MainActivity file for the application.
 ```java
 package com.google.ctf.sandbox;
@@ -107,7 +107,7 @@ public class C0000 extends Activity {
 ```
 #### I didn't really analyze what it does aside from the fact that it is recursive, but I what I did know was that I was gonna be able to use it for solving the challenge.
 
-### Bruteforce ideas
+### 0x01: Bruteforce Ideas
 #### I reimplemented the core algorithms for the challenge in python, and did quick tests with the first part of the flag. I assumed that the first four characters of the flag would be 'CTF{' as it is the flag format, provided it as input for the algorithm to process and confirmed that it passed the final check. 
 ![](test.png)
 #### Given that we know already know a part of the flag, we only need the remaining 44 characters. Although the magic values are given, it is not easy to simply retrieve the characters needed to pass the checks, leaving me no other choice but to bruteforce the possible combinations. The plan seemed simple, but I needed to think intelligently about it, as generating permutations from the range of printable ascii characters would take the bruteforce script a lot of time to loop and check. Instead I opted to only generate permutations from the most common characters to be used in flags for ctfs; it would still take quite some time to run but will be significantly faster compared to the former idea. Behold, the bruteforce script I am proud of despite being painfully time consuming:
@@ -116,5 +116,5 @@ public class C0000 extends Activity {
 #### Fast forward to almost 2 excruciating hours later, we finally have the characters that passed all the checks!. It was now smooth sailing from this point, as all that was needed to do was arrange the characters in the order of their respective magic values(40999019 first, followed by 2789358025L, so on and so forth). And just like that I captured my first flag for one of the top teams: `CTF{y0u_c4n_k3ep_y0u?_m4gic_1_h4Ue_laser_b3ams!}`
 ![](google_ctf_android_solved.gif)
 
-## Conclusion
+### 0x02: Conclusion
 #### As I stated in the introduction, I had a fun time solving the challenge and waiting for the script to do its purpose. It was a satisfying solve, despite taking hours to complete. Maybe I could've done better using z3 or other tools, I dunno it's only now that I've heard of these. Well, that's another thing to learn and and improve with.
