@@ -2,7 +2,7 @@
 ##### category: reversing
 > Can you find the correct key to unlock this app?
 
-##### *tl;dr: a few minutes of reversing the algorithm, 1 hour & 30 mins for sore bruteforcing*
+##### *tl;dr: a few minutes of reversing the algorithm, 1 hour & 30 mins for sore bruteforcing, a bit faster with a better algorithm*
 
 #### This challenge marked a lot of firsts for me as a CTF player: first time joining a team to compete with (OpenToAll) despite me being beginner-level at best and capturing a flag for them; first time I solved a main challenge from Google CTF (I assumed this was a non-beginner challenge since there were no beginner's quest challenges this year and this was not marked as easy in the challenge description). I had fun reversing, scripting a keygen for the challenge, and writing this writeup. For me, this is a milestone and one of the reasons for me to keep grinding, sharpening my skillset to be on par with the greatest players/teams in the world and hopefully be a decorated exploit developer in the near future.
 
@@ -94,7 +94,7 @@ public class C0000 extends Activity {
 ```
 #### My approach was to go through the code line by line and analyze its functionality. The class initializer sets an f0class array that contains seemingly "magic" values. Then we see recognizable ascii values being loaded up into a `keyString` variable. Quickly creating a script to print out their character representations reveal that it is a fake flag: "Apparently this is not the flag. What's going on?".
 ![](meme.jpg)
-#### Scrolling further down we see that the flag we provide as input will be checked if it has 48 characters. Then it continues to go through a loop for 12 times, and perform a visually-complex looking but really simple algorithm. In summary, it loops 12 times and takes 4 characters from the flag for each iteration, then performs the algorithm `f2[i] = (((ord(flag[(i * 4) + 3]) << 24) | (ord(flag[(i * 4) + 2]) << 16)) | (ord(flag[(i * 4) + 1]) << 8)) | ord(flag[(i * 4)])`. After the values are calculated and stored, they undergo a final check with a method `m0` and some arithmetic operations then compare it with the magic values on the class initializer. Analyzing the last bits of the source code, I saw what seemed to be a counter variable which gets incremented and checked if it was greater than or equal to the flag length in order to confirm that our input is indeed the flag. Since the last part seemed to be incomplete, I made an educated guess that the last part is once again a loop that checks every calculated value and magic value, then increments the counter if they are equal. Looking through the R file given by jadx, we see that the method m0 is a recursive one and returns an array.
+#### Scrolling further down we see that the flag we provide as input will be checked if it has 48 characters. Then it continues to go through a loop for 12 times, and perform a visually-complex looking but really simple algorithm. In summary, it loops 12 times and takes 4 characters from the flag for each iteration, then performs the algorithm `f2[i] = (((ord(flag[(i * 4) + 3]) << 24) | (ord(flag[(i * 4) + 2]) << 16)) | (ord(flag[(i * 4) + 1]) << 8)) | ord(flag[(i * 4)])`. After the values are calculated and stored, they undergo a final check with a method `m0` and some arithmetic operations then compare it with the magic values on the class initializer. Analyzing the last bits of the source code, I saw what seemed to be a counter variable which gets incremented and checked if it was greater than or equal to the flag length in order to confirm that our input is indeed the correct flag. Since the last part seemed to be incomplete, I made an educated guess that the last part is once again a loop that checks every calculated value and magic value, then increments the counter if they are equal. Looking through the R file given by jadx, we see that the method m0 is a recursive one and returns an array.
 ```java
     /* renamed from: ő  reason: contains not printable characters */
     public static long[] m0(long a, long b) {
@@ -114,7 +114,11 @@ public class C0000 extends Activity {
 ![](bruteforce_script.png)
 ![](finished.png)
 #### Fast forward to almost 2 excruciating hours later, we finally have the characters that passed all the checks!. It was now smooth sailing from this point, as all that was needed to do was arrange the characters in the order of their respective magic values(40999019 first, followed by 2789358025L, so on and so forth). And just like that I captured my first flag for one of the top teams: `CTF{y0u_c4n_k3ep_y0u?_m4gic_1_h4Ue_laser_b3ams!}`
+
+### 0x02: Edits
+#### After the dopamine rush went away, I was reading through the bruteforce code and thought to myself `Wow, this was really inefficient`. In an effort to make a better algorithm for doing the bruteforce, I ditched the permutations idea then opted for a nested loop approach. It still took some time to run, but it was faster than the permutations solution. Also added in some fancy output printing (who doesn't want those).
+![](bruteforce_2.0.png)
 ![](google_ctf_android_solved_original.gif)
 
-### 0x02: Conclusion
-#### As I stated in the introduction, I had a fun time solving the challenge and waiting for the script to do its purpose. It was a satisfying solve, despite taking hours to complete. Maybe I could've done better using z3 or other tools, I dunno it's only now that I've heard of these. Well, that's another thing to learn and and improve with.
+### 0x03: Conclusion
+#### As I stated in the introduction, I had a fun time solving the challenge and waiting for the script to do its purpose. It was a satisfying solve, despite taking hours to complete. Maybe I could've done better using z3 or other tools, I dunno it's only now that I've heard of these. A thing to note for me as well is to maybe have a better plan of solving things. Well, that's another thing to learn and improve with.
