@@ -116,8 +116,9 @@ public class C0000 extends Activity {
 #### Fast forward to almost 2 excruciating hours later, we finally have the characters that passed all the checks!. It was now smooth sailing from this point, as all that was needed to do was arrange the characters in the order of their respective magic values(40999019 first, followed by 2789358025L, so on and so forth). And just like that I captured my first flag for one of the top teams: `CTF{y0u_c4n_k3ep_y0u?_m4gic_1_h4Ue_laser_b3ams!}`
 
 ### 0x02: Edits
-#### After the dopamine rush went away, I was reading through the bruteforce code and thought to myself `Wow, this was really inefficient`. In an effort to make a better algorithm for doing the bruteforce, I ditched the permutations idea then opted for a nested loop approach. It still took some time to run, but it was faster than the permutations solution. Also added in some fancy output printing (who doesn't want those).
+#### After the dopamine rush went away, I was reading through the bruteforce code and thought to myself `Wow, this was really inefficient`. In an effort to make a better algorithm for doing the bruteforce (and since I had the time since I didn't try to solve any other challenge afterwards), I ditched the permutations idea then opted for a nested loop approach. It still took some time to run, but it was faster than the permutations solution. Also added in some fancy output printing (who doesn't want those).
 ![](bruteforce_2.0.png)
+![](fancy_bruteforce.gif)
 ![](google_ctf_android_solved_original.gif)
 
 ### 0x03: Conclusion
