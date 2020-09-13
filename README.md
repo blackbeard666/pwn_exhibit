@@ -8,6 +8,9 @@
     - roppity
     - slithery
 
+- ALLES CTF
+     - prehistoric mario
+     
 - Fword CTF
     - [Welcome Pwner](/content/2020_CTF/FwordCTF/writeup_pwn_welcome.md)
     - [One Piece](/content/2020_CTF/FwordCTF/writeup_pwn_onepiece.md)
