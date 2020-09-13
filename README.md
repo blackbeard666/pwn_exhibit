@@ -19,9 +19,6 @@
     - [check](/content/2020_CTF/ArabSecCWG/writeup_check.md)
     - DOOM
 
-- PoseidonCTF
-    - The Large Cherries
-
 ## 2019
 * * *
 - PeaCTF
