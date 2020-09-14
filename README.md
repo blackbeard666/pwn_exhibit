@@ -6,7 +6,7 @@
 
 - CSAW Qualifiers
     - [roppity](/content/2020_CTF/CSAW_quals/pwn_roppity/writeup_pwn_roppity.md)
-    - [slithery]((/content/2020_CTF/CSAW_quals/pwn_slithery/writeup_pwn_slithery.md)
+    - [slithery](/content/2020_CTF/CSAW_quals/pwn_slithery/writeup_pwn_slithery.md)
 
 - ALLES CTF
      - prehistoric mario
