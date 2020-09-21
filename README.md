@@ -6,7 +6,7 @@
 
 - DownUnder CTF
     - [shell this!](/content/2020_CTF/DownUnder/pwn_shellthis/writeup_pwn_shellthis.md)
-    - return to what
+    - [return to what](/content/2020_CTF/DownUnder/pwn_return_to_what/writeup_pwn_returntowhat.md)
     - my first echo server
     - return to what's revenge
 
