@@ -20,5 +20,7 @@ void vuln() {
 pwndbg> p get_shell
 $1 = {void ()} 0x4006ca <get_shell>
 ```
-#### Since we now have everything we need, we can create an exploit script.
+#### Since we now have everything we need, we can create an exploit script and get the flag.
+![](pyexploit_1.png)
+![](shell_1.png)
 
