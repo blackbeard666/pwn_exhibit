@@ -8,7 +8,7 @@
     - [shell this!](/content/2020_CTF/DownUnder/pwn_shellthis/writeup_pwn_shellthis.md)
     - [return to what](/content/2020_CTF/DownUnder/pwn_return_to_what/writeup_pwn_returntowhat.md)
     - my first echo server
-    - return to what's revenge
+    - [return to what's revenge](/content/2020_CTF/DownUnder/pwn_returntowhats_revenge/writeup_pwn_returntorevenge.md)
 
 - CSAW Qualifiers
     - [roppity](/content/2020_CTF/CSAW_quals/pwn_roppity/writeup_pwn_roppity.md)
