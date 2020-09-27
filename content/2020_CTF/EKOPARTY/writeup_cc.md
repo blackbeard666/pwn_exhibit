@@ -27,3 +27,10 @@
 #### Flag: `EKO{181.141.6.106:2090}`
 
 #### I didn't manage to solve the last two challenges (C&C4 I couldn't run for some reason, C&C5 requires a 64-bit architecture which the free plans on any.run doesn't support), but I am sure that I will be able to in the next year :) 
+
+## C&C 5
+> This malware is making reverse connections to a C&C, may you find the related IP and port?
+
+#### Solved it after the ctf, I saw one person in the discord server reference an online sandbox [tool](https://www.hybrid-analysis.com/) to which I submitted the malware sample and examined the analysis results. Since our task is to find an IP address and port, we should be interested in the network connections that it establishes.
+![](cc5_hybrid.png)
+#### Flag: `EKO{179.179.196.243:31337}`

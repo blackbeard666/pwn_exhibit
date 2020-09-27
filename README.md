@@ -6,7 +6,7 @@
 
 - EKOPARTY CTF
     - [Entry [1-5]](/content/2020_CTF/EKOPARTY/writeup_entry.md)
-    - [C&C [1-3]](/content/2020_CTF/EKOPARTY/writeup_cc.md)
+    - [C&C [1-3,5]](/content/2020_CTF/EKOPARTY/writeup_cc.md)
     - [Trivia [1,2,5]](/content/2020_CTF/EKOPARTY/writeup_trivia.md)
 
 - DownUnder CTF
