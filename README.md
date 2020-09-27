@@ -5,8 +5,9 @@
     - [Android](/content/2020_CTF/GoogleCTF/re_android/android_writeup.md)
 
 - EKOPARTY CTF
-    - Entry [1-5], Trivia [1]
-    - C&C [1-3]
+    - Entry [1-5](/content/2020_CTF/EKOPARTY/writeup_entry.md)
+    - C&C [1-3](/content/2020_CTF/EKOPARTY/writeup_cc.md)
+    - Trivia [1,2,5](/content/2020_CTF/EKOPARTY/writeup_trivia.md)
 
 - DownUnder CTF
     - [shell this!](/content/2020_CTF/DownUnder/pwn_shellthis/writeup_pwn_shellthis.md)

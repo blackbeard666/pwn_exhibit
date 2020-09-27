@@ -1,6 +1,9 @@
 ## EKOPARY: C&C [1-3]
 
-#### Initially, I thought I wouldn't be able to solve these (C&C) challenges since I haven't set up an analysis vm yet (chromebook problems). But then I found an online malware analysis sandbox called any.run which I used to solve some of the C&C challenges.
+![](cc_board.png)
+
+#### Initially, I thought I wouldn't be able to solve these (C&C) challenges since I haven't set up an analysis vm yet (chromebook problems). But then I found an online malware analysis sandbox called any.run which I used to solve some of the C&C challenges. By solving these challenges, I was able to secure a spot in the top 100, despite using only beginner knowledge.
+![](leaderboard.png)
 
 ## C&C 1
 > This is a network capture of a generic trojan sample, may you please tell us the IP address of the C&C?

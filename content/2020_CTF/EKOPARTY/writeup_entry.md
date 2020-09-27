@@ -1,4 +1,6 @@
-## EKOPARTY: entry [1-5], trivia [1]
+## EKOPARTY: entry [1-5]
+
+![](entry_board.png)
 #### These are the some of the challenges I solved during the ctf. This was a new experience for me as I got to somehow experience challenges catered for malware analysts. I need to learn more about reversing and malware analysis to be able to solve more challenges in this event in the next editions.
 
 ## Entry 1: exe
@@ -39,10 +41,3 @@
 #### We get into a bit of a problem extracting the file at first, but can be solved using this [fix](https://unix.stackexchange.com/questions/183452/error-trying-to-unzip-file-need-pk-compat-v6-1-can-do-v4-6). During the process we get prompted with a password, to which we need to enter `infected`, as it is the most common password used when sharing malware samples. After we have extracted the binary, we can simply run strings on it again to get the flag.
 ![](entry_clop.png)
 #### Flag: `EKO{1nf3ct3d}`
-
-## Trivia 1: Deep
-> What's the ssdeep value of this malware sample?
-
-#### I saw an ssdeep parameter when reading through the virustotal results of the previous challenges, so I used it again for the malware sample provided. We head to the details section of the result then simply copy the ssdeep value.
-![](trivia_deep.png)
-#### Flag: `EKO{1536:KCnGt1AnxGhRoE0JLEaolArglgidmpHACgaSz42tpAonFcP+i+9l:jG1hRoE0JLE8Qjg6aSk0LE+9l}`
