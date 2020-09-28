@@ -13,7 +13,7 @@
     - [Trivia [1,2,5]](/content/2020_CTF/EKOPARTY/writeup_trivia.md)
 
 - Dark CTF
-    - [so much]((/content/2020_CTF/DarkCTF/writeup_so_much.md))
+    - [so much](/content/2020_CTF/DarkCTF/writeup_so_much.md)
     - [roprop](/content/2020_CTF/DarkCTF/writeup_roprop.md)
     - [newPaX](/content/2020_CTF/DarkCTF/writeup_newpax.md)
 
