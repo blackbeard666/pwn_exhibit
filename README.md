@@ -12,6 +12,10 @@
     - [C&C [1-3,5]](/content/2020_CTF/EKOPARTY/writeup_cc.md)
     - [Trivia [1,2,5]](/content/2020_CTF/EKOPARTY/writeup_trivia.md)
 
+- Dark CTF
+    - [roprop](/content/2020_CTF/DarkCTF/writeup_roprop.md)
+    - [newPaX](/content/2020_CTF/DarkCTF/writeup_newpax.md)
+
 - DownUnder CTF
     - [shell this!](/content/2020_CTF/DownUnder/pwn_shellthis/writeup_pwn_shellthis.md)
     - [return to what](/content/2020_CTF/DownUnder/pwn_return_to_what/writeup_pwn_returntowhat.md)
