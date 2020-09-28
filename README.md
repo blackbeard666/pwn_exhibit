@@ -3,6 +3,9 @@
 * * *
 - Google CTF
     - [Android](/content/2020_CTF/GoogleCTF/re_android/android_writeup.md)
+    
+- Bsides Boston CTF
+    - [seashells, mobility, y2k](/content/2020_CTF/BsidesBoston/writeups.md)
 
 - EKOPARTY CTF
     - [Entry [1-5]](/content/2020_CTF/EKOPARTY/writeup_entry.md)
