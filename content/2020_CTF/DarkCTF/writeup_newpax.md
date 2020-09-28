@@ -1,7 +1,7 @@
 ## DarkCTF: newPaX [pwn]
 > Even though Solar Designer gave you his times technique, you have to resolve(sort-out) yourself and go deeper. This time rope willn't let you have anything you want but you have to make a fake rope and get everything.
 
-#### I solved this using re2libc, but the author had another 'intended' way of solving it (I'll update this later). Similar to roprop, but this time in 32-bit. There are a only a few functions in the binary to which we can perform rop with. My plan was to leak printf's got address then proceed with the usual ret2libc approach.
+#### I solved this using ret2libc, but the author had another 'intended' way of solving it (I'll update this later). Similar to roprop, but this time in 32-bit. There are a only a few functions in the binary to which we can perform rop with. My plan was to leak printf's got address then proceed with the usual ret2libc approach.
 ```python
 from pwn import *
 
