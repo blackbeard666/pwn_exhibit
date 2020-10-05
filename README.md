@@ -9,7 +9,7 @@
     - [metacortex](/content/2020_CTF/b01lers_bootcamp/pwn_metacortex/metacortex_writeup.md) 
     - [there is no spoon](/content/2020_CTF/b01lers_bootcamp/pwn_nospoon/nospoon_writeup.md)
     - [oracle](/content/2020_CTF/b01lers_bootcamp/pwn_oracle/oracle_writeup.md)
-    - whiterabbit 
+    - [whiterabbit](/content/2020_CTF/b01lers_bootcamp/pwn_whiterabbit/whiterabbit_writeup.md)
     - [free your mind](/content/2020_CTF/b01lers_bootcamp/pwn_freemind/freeurmind_writeup.md)
     - [see for yourself](/content/2020_CTF/b01lers_bootcamp/pwn_seeforyourself/seeforyourself_writeup.md)
     
