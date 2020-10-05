@@ -5,8 +5,13 @@
     - [Android](/content/2020_CTF/GoogleCTF/re_android/android_writeup.md)
 
 - b01lers bootcamp CTF
+    - [a brief intro](/content/2020_CTF/b01lers_bootcamp/brief_intro.md)
     - [metacortex](/content/2020_CTF/b01lers_bootcamp/pwn_metacortex/metacortex_writeup.md) 
     - [there is no spoon](/content/2020_CTF/b01lers_bootcamp/pwn_nospoon/nospoon_writeup.md)
+    - [oracle](/content/2020_CTF/b01lers_bootcamp/pwn_oracle/oracle_writeup.md)
+    - whiterabbit 
+    - [free your mind](/content/2020_CTF/b01lers_bootcamp/pwn_freemind/freeurmind_writeup.md)
+    - [see for yourself](/content/2020_CTF/b01lers_bootcamp/pwn_seeforyourself/seeforyourself_writeup.md)
     
 - Bsides Boston CTF
     - [seashells, mobility, y2k](/content/2020_CTF/BsidesBoston/writeups.md)
