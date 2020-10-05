@@ -1,0 +1,4 @@
+## b01lers bootcamp: [a brief intro]
+#### I played the b01lers bootcamp CTF this past weekend and was satisfied with my results. Since it was a CTF for beginners, my original goal was to solve all pwn challenges as a test if I have decent knowledge of memory corruption that I've been learning for the past month. I managed to solve 6/8 which I think is good enough. I couldn't solve the last two since I had little time for the leaks one and I'm still learning heap exploitation for the last chall. 
+
+#### Although my original plan was to solve pwn only, I decided midway to try some of the other challenges as well - why not for a few additional points? In the end I placed 92nd/500+ teams that played. 

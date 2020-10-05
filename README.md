@@ -3,6 +3,9 @@
 * * *
 - Google CTF
     - [Android](/content/2020_CTF/GoogleCTF/re_android/android_writeup.md)
+
+- b01lers bootcamp CTF
+    - [metacortex](/content/2020_CTF/b01lers_bootcamp/pwn_metacortex/metacortex_writeup.md) 
     
 - Bsides Boston CTF
     - [seashells, mobility, y2k](/content/2020_CTF/BsidesBoston/writeups.md)
