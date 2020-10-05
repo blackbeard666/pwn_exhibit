@@ -6,6 +6,7 @@
 
 - b01lers bootcamp CTF
     - [metacortex](/content/2020_CTF/b01lers_bootcamp/pwn_metacortex/metacortex_writeup.md) 
+    - [there is no spoon](/content/2020_CTF/b01lers_bootcamp/pwn_nospoon/nospoon_writeup.md)
     
 - Bsides Boston CTF
     - [seashells, mobility, y2k](/content/2020_CTF/BsidesBoston/writeups.md)
