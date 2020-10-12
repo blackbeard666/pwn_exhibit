@@ -7,6 +7,8 @@
 - DamCTF
     - [allokay](/content/2020_CTF/DamCTF/pwn_allokay/pwn_allokay_writeup.md)
     - [finger-warmup](/content/2020_CTF/DamCTF/web_fingerwarmup/web_writeup.md)
+    - schlage
+    - [malware phase 1](/content/2020_CTF/DamCTF/malware1/writeup_malware1.md)
     
 - b01lers bootcamp CTF
     - [a brief intro](/content/2020_CTF/b01lers_bootcamp/brief_intro.md)
