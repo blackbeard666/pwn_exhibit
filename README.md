@@ -6,6 +6,7 @@
 
 - DamCTF
     - [allokay](/content/2020_CTF/DamCTF/pwn_allokay/pwn_allokay_writeup.md)
+    - [finger-warmup](/content/2020_CTF/DamCTF/web_fingerwarmup/web_writeup.md)
     
 - b01lers bootcamp CTF
     - [a brief intro](/content/2020_CTF/b01lers_bootcamp/brief_intro.md)
