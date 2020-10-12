@@ -1,2 +1,2 @@
 theme: jekyll-theme-hacker
-description: "Just a stand-in website to post my ctf writeups and journey into binary exploitation/malware analysis/reverse engineering. Temporary layout for now, if you know some webdev help me build this site please, I've got some ideas in mind. If images don't load, just head on to the site's github repository(https://github.com/blackbeard666/pwn_exhibit) and read on :)"
+description: "CTF writeups, mainly pwn but will learn malware analysis/android stuff in the upcoming months. Will redesign the website if I have the time to learn web dev"
