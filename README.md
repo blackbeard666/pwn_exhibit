@@ -4,6 +4,9 @@
 - Google CTF
     - [Android](/content/2020_CTF/GoogleCTF/re_android/android_writeup.md)
 
+- DamCTF
+    - [allokay](/content/2020_CTF/DamCTF/pwn_allokay/pwn_allokay_writeup.md)
+    
 - b01lers bootcamp CTF
     - [a brief intro](/content/2020_CTF/b01lers_bootcamp/brief_intro.md)
     - [metacortex](/content/2020_CTF/b01lers_bootcamp/pwn_metacortex/metacortex_writeup.md) 
