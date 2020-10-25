@@ -89,4 +89,4 @@ print(hex(jnistr)[2:-1].decode('hex')[::-1])
 ```
 
 #### Since we have all parts of the flag now, we just simply concatenate them using underscores as seperators then wrap them into the flag format.
-#### Flag: `flag{tH4T_w45N-T~so_h4rd~huh_0r~w4S-1t?8)}
+#### Flag: `flag{tH4T_w45N-T~so_h4rd~huh_0r~w4S-1t?8)}`
