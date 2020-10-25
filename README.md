@@ -4,6 +4,8 @@
 - Google CTF
     - [Android](/content/2020_CTF/GoogleCTF/re_android/android_writeup.md)
 
+- HackLu CTF
+    - [flagdroid](/content/2020_CTF/HackLuCTF/rev_flagdroid/flagdroid_writeup.md)
 - DamCTF
     - [allokay](/content/2020_CTF/DamCTF/pwn_allokay/pwn_allokay_writeup.md)
     - [finger-warmup](/content/2020_CTF/DamCTF/web_fingerwarmup/web_writeup.md)
