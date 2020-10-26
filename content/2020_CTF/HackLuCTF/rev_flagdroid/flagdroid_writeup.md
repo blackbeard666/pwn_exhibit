@@ -25,6 +25,7 @@ print(base64.b64decode('dEg0VA=='))
 
 ```python
 key = [x for x in 'hack.lu20']
+bytestr = '\u001fTT:\u001f5ñHG'
 
 for i in range(9):
 	key[i] = ord(key[i]) ^ ord(bytestr[i])
