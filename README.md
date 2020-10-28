@@ -3,7 +3,8 @@
 * * *
 - Google CTF
     - [Android](/content/2020_CTF/GoogleCTF/re_android/android_writeup.md)
-
+- Razi CTF
+    - [chasing a lock](/content/2020_CTF/RaziCTF/android_lock/lock_writeup.md)
 - HackLu CTF
     - [flagdroid](/content/2020_CTF/HackLuCTF/rev_flagdroid/flagdroid_writeup.md)
 - DamCTF
