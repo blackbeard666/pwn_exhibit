@@ -1,6 +1,6 @@
 ## CyberYoddha CTF: [pwn]
 
-#### Although this was a beginner level ctf, I was kinda satisfied to do a board wipe of the binary exploitation challenges. Since the solutions to all the challenges are pretty basic, I'll just shove them all into one writeup.
+#### Since the solutions to all the challenges are pretty basic, I'll just shove them all into one writeup.
 
 ![](wipe.png)
 

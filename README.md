@@ -3,6 +3,8 @@
 * * *
 - Google CTF
     - [Android](/content/2020_CTF/GoogleCTF/re_android/android_writeup.md)
+- CyberYoddha CTF
+    - [pwn](/content/2020_CTF/CyberYoddhaCTF/pwn/pwn_writeups.md)
 - Razi CTF
     - [chasing a lock](/content/2020_CTF/RaziCTF/android_lock/lock_writeup.md)
     - [strong padlock](/content/2020_CTF/RaziCTF/android_strongpadlock/strongpadlock_writeup.md)
