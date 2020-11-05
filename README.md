@@ -7,6 +7,7 @@
     - [greeter](/content/2020_CTF/NACTF/pwn_greeter.md)
     - [dROPit](/content/2020_CTF/NACTF/pwn_dropit.md)
     - [format](/content/2020_CTF/NACTF/pwn_format.md)
+    - [patches](/content/2020_CTF/NACTF/rev_patches.md)
 - CyberYoddha CTF
     - [pwn](/content/2020_CTF/CyberYoddhaCTF/pwn/pwn_writeups.md)
 - Razi CTF
