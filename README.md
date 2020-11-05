@@ -3,6 +3,10 @@
 * * *
 - Google CTF
     - [Android](/content/2020_CTF/GoogleCTF/re_android/android_writeup.md)
+- Newark Academy CTF
+    - [greeter](/content/2020_CTF/NACTF/pwn_greeter.md)
+    - [dROPit](/content/2020_CTF/NACTF/pwn_dropit.md)
+    - [format](/content/2020_CTF/NACTF/pwn_format.md)
 - CyberYoddha CTF
     - [pwn](/content/2020_CTF/CyberYoddhaCTF/pwn/pwn_writeups.md)
 - Razi CTF
