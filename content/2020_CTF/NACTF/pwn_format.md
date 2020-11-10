@@ -1,5 +1,5 @@
 ## NACTF: format [pwn]
-> description to be added later
+![](formats_desc.png)
 
 #### Despite being an easy challenge, I was still satisfied to solve it since I wasn't confident with my format string skills. We were given the challenge binary and source code which makes it kinda easier to understand. Basically what we need to do is set the lower bits of the num variable to the value 0x42 (66). 
 

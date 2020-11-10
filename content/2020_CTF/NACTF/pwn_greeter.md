@@ -1,5 +1,5 @@
 ## NACTF: greeter [pwn]
-> description to be added later
+![](greeter_desc.png)
 
 ```c
 #include <stdio.h>

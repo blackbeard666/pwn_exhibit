@@ -1,5 +1,5 @@
 ## NACTF: dROPit [pwn]
-> description to be added later
+![](dropit_desc.png)
 
 #### This was a ROP challenge as hinted by the capitalized letters in the challenge name. Simply, we have a buffer overflow vulnerability again to which we will need to leak libc addresses in order to determine the libc version used and pop a shell. I have done a lot of similar writeups to this one which can be found on the website, so I won't go into detail with this (only a rundown of what I did).
 
