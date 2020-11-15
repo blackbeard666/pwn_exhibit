@@ -3,6 +3,8 @@
 * * *
 - Google CTF
     - [Android](/content/2020_CTF/GoogleCTF/re_android/android_writeup.md)
+- Square CTF
+    - [jimi-jam](/content/2020_CTF/SquareCTF/pwn_jimijam.md)
 - Newark Academy CTF
     - [patches](/content/2020_CTF/NACTF/rev_patches.md)
     - [greeter](/content/2020_CTF/NACTF/pwn_greeter.md)

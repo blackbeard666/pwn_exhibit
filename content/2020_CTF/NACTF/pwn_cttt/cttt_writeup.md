@@ -94,4 +94,10 @@ def list_trackers():
 	print(p.recv())
 ```
 
-#### Next part here.
+## Tcache Poisoning
+#### Now from here where do we go next? For basic heap challenges like this one, the general plan is to leak a libc adress then overwrite a hook with system's address. In the writeup I'm analyzing, HK used a technique called `tcache poisoning` in order to leak the libc address of atoi@GOT then calculate the libc base from the leaked offset. 
+
+#### Basically, tcache poisoning is a technique that tricks malloc into returning an arbitrary pointer that we can control to us. This is what we'll be doing with the use-after-free vulnerability. 
+
+## Leaking atoi@GOT
+#### Next
