@@ -48,6 +48,7 @@
     - [so much](/content/2020_CTF/DarkCTF/writeup_so_much.md)
     - [roprop](/content/2020_CTF/DarkCTF/writeup_roprop.md)
     - [newPaX](/content/2020_CTF/DarkCTF/writeup_newpax.md)
+    - [rrop](/content/2020_CTF/DarkCTF/writeup_rrop.md)
 
 - DownUnder CTF
     - [shell this!](/content/2020_CTF/DownUnder/pwn_shellthis/writeup_pwn_shellthis.md)
