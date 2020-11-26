@@ -35,6 +35,9 @@
     - [whiterabbit](/content/2020_CTF/b01lers_bootcamp/pwn_whiterabbit/whiterabbit_writeup.md)
     - [free your mind](/content/2020_CTF/b01lers_bootcamp/pwn_freemind/freeurmind_writeup.md)
     - [see for yourself](/content/2020_CTF/b01lers_bootcamp/pwn_seeforyourself/seeforyourself_writeup.md)
+
+- Bsides Delhi CTF
+    - [lazy](/content/2020_CTF/BsidesDelhi/lazy_writeup.md)
     
 - Bsides Boston CTF
     - [seashells, mobility, y2k](/content/2020_CTF/BsidesBoston/writeups.md)
