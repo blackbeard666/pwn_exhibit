@@ -3,6 +3,9 @@
 * * *
 - Google CTF
     - [Android](/content/2020_CTF/GoogleCTF/re_android/android_writeup.md)
+- InterIUT CTF
+    - [reverse me 1](/content/2020_CTF/InterIUTCTF/android_rev1_writeup.md)
+    - [reverse me 2](/content/2020_CTF/InterIUTCTF/android_rev2_writeup.md)
 - Square CTF
     - [jimi-jam](/content/2020_CTF/SquareCTF/pwn_jimijam.md)
 - Sunshine CTF
