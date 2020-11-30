@@ -1,5 +1,6 @@
-## InterIUT CTF: reverse me 2 [android]
-> description to be added later
+## InterIUT CTF: reverse me 2 [android | 50 pts]
+> L'application de share flag de l'ENSIBS a été leakée !
+ Trouvez tous les flags de la base de données.
 
 ## Firebase
 #### This was a pretty fun challenge to learn about and solved. From the decompiled java code below, we can see that the application uses a firebase as the database for the application. 

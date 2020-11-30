@@ -6,6 +6,10 @@
 - InterIUT CTF
     - [reverse me 1](/content/2020_CTF/InterIUTCTF/android_rev1_writeup.md)
     - [reverse me 2](/content/2020_CTF/InterIUTCTF/android_rev2_writeup.md)
+    - [Qui Passe](/content/2020_CTF/InterIUTCTF/android_quipasse_writeup.md)
+    - [SMALI, un beau pays](/content/2020_CTF/InterIUTCTF/android_smali_writeup.md)
+    - [CyberMalware](/content/2020_CTF/InterIUTCTF/android_cybermalware_writeup.md)
+    - [Jankenpon](/content/2020_CTF/InterIUTCTF/android_jankenpon_writeup.md)
 - Square CTF
     - [jimi-jam](/content/2020_CTF/SquareCTF/pwn_jimijam.md)
 - Sunshine CTF
