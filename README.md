@@ -7,7 +7,7 @@
     - [prologue](/content/2020_CTF/boot2rootCTF/prologue.md)
     - [canned](/content/2020_CTF/boot2rootCTF/canned_writeup.md)
 - DefCamp CTF
-    - modern login [writeup in-progress]
+    - [modern-login](/content/2020_CTF/DefCampCTF/modernlogin_writeup.md)
 - InterIUT CTF
     - [reverse me 1](/content/2020_CTF/InterIUTCTF/android_rev1_writeup.md)
     - [reverse me 2](/content/2020_CTF/InterIUTCTF/android_rev2_writeup.md)
