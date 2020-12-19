@@ -3,6 +3,11 @@
 * * *
 - Google CTF
     - [Android](/content/2020_CTF/GoogleCTF/re_android/android_writeup.md)
+- XMAS CTF
+    - [Naughty?](/content/2020_CTF/xmasCTF/pwn_naughty/pwn_naughty_writeup.md)
+    - [Ready for Xmas?](/content/2020_CTF/xmasCTF/pwn_readyxmas/pwn_ready_writeup.md)
+    - [lil wishes db](/content/2020_CTF/xmasCTF/pwn_lilwishes/pwn_lilwishes_writeup.md)
+    - [rev, web, misc](/content/2020_CTF/xmasCTF/rev_web_misc.md)
 - boot2root CTF
     - [prologue](/content/2020_CTF/boot2rootCTF/prologue.md)
     - [canned](/content/2020_CTF/boot2rootCTF/canned_writeup.md)
