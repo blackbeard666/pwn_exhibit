@@ -1,5 +1,5 @@
 ## XMAS CTF: naughty [pwn]
-![](naughty_desc.png)
+![](naugthy_desc.png)
 
 #### Standard buffer overflow which we can overwrite the return pointer, the catch is that we only have little control after taking program execution since we are only allowed a short amount of user input. 
 
