@@ -1,23 +1,29 @@
 # CTF Writeups
 ## 2020
 * * *
-- Google CTF
-    - [Android](/content/2020_CTF/GoogleCTF/re_android/android_writeup.md)
+
+- Grimmcon CTF
+    - [sentinel](/content/2020_CTF/grimmconCTF/sentinel_writeup.md)
+
 - Vulncon CTF
     - [warmup](/content/2020_CTF/vulnconCTF/pwn_warmup_writeup.md)
     - [name](/content/2020_CTF/vulnconCTF/pwn_name_writeup.md)
     - [looping](/content/2020_CTF/vulnconCTF/pwn_looping_writeup.md)
     - [where to go?](/content/2020_CTF/vulnconCTF/pwn_where_writeup.md)
+
 - XMAS CTF
     - [Naughty?](/content/2020_CTF/xmasCTF/pwn_naughty/pwn_naughty_writeup.md)
     - [Ready for Xmas?](/content/2020_CTF/xmasCTF/pwn_readyxmas/pwn_ready_writeup.md)
     - [lil wishes db](/content/2020_CTF/xmasCTF/pwn_lilwishes/pwn_lilwishes_writeup.md)
     - [rev, web, misc](/content/2020_CTF/xmasCTF/rev_web_misc.md)
+
 - boot2root CTF
     - [prologue](/content/2020_CTF/boot2rootCTF/prologue.md)
     - [canned](/content/2020_CTF/boot2rootCTF/canned_writeup.md)
+
 - DefCamp CTF
     - [modern-login](/content/2020_CTF/DefCampCTF/modernlogin_writeup.md)
+
 - InterIUT CTF
     - [reverse me 1](/content/2020_CTF/InterIUTCTF/android_rev1_writeup.md)
     - [reverse me 2](/content/2020_CTF/InterIUTCTF/android_rev2_writeup.md)
@@ -25,24 +31,31 @@
     - [SMALI, un beau pays](/content/2020_CTF/InterIUTCTF/android_smali_writeup.md)
     - [CyberMalware](/content/2020_CTF/InterIUTCTF/android_cybermalware_writeup.md)
     - [Jankenpon](/content/2020_CTF/InterIUTCTF/android_jankenpon_writeup.md)
+
 - Square CTF
     - [jimi-jam](/content/2020_CTF/SquareCTF/pwn_jimijam.md)
+
 - Sunshine CTF
     - [speedrun 08](/content/2020_CTF/SunshineCTF/speedrun8_writeup.md)
     - [speedrun 14](/content/2020_CTF/SunshineCTF/speedrun12_writeup.md)
+
 - Newark Academy CTF
     - [patches](/content/2020_CTF/NACTF/rev_patches.md)
     - [greeter](/content/2020_CTF/NACTF/pwn_greeter.md)
     - [dROPit](/content/2020_CTF/NACTF/pwn_dropit.md)
     - [format](/content/2020_CTF/NACTF/pwn_format.md)
     - [covid tracker tracker tracker](/content/2020_CTF/NACTF/pwn_cttt/cttt_writeup.md)
+
 - CyberYoddha CTF
     - [pwn](/content/2020_CTF/CyberYoddhaCTF/pwn/pwn_writeups.md)
+
 - Razi CTF
     - [chasing a lock](/content/2020_CTF/RaziCTF/android_lock/lock_writeup.md)
     - [strong padlock](/content/2020_CTF/RaziCTF/android_strongpadlock/strongpadlock_writeup.md)
+
 - HackLu CTF
     - [flagdroid](/content/2020_CTF/HackLuCTF/rev_flagdroid/flagdroid_writeup.md)
+
 - DamCTF
     - [allokay](/content/2020_CTF/DamCTF/pwn_allokay/pwn_allokay_writeup.md)
     - [finger-warmup](/content/2020_CTF/DamCTF/web_fingerwarmup/web_writeup.md)
@@ -84,9 +97,9 @@
     - [roppity](/content/2020_CTF/CSAW_quals/pwn_roppity/writeup_pwn_roppity.md)
     - [slithery](/content/2020_CTF/CSAW_quals/pwn_slithery/writeup_pwn_slithery.md)
 
-- ALLES CTF
-     - prehistoric mario 
-     
+- Google CTF
+    - [Android](/content/2020_CTF/GoogleCTF/re_android/android_writeup.md)
+
 - Fword CTF
     - [Welcome Pwner](/content/2020_CTF/FwordCTF/writeup_pwn_welcome.md)
     - [One Piece](/content/2020_CTF/FwordCTF/writeup_pwn_onepiece.md)
@@ -96,15 +109,7 @@
     - DOOM
 
 ## 2019
-* * *
-- PeaCTF
-    - [Coffee Time](/content/2019_CTF/peaCTF/writeup_coffee_time.md)
-    
-- HSCTF
-    - [A Byte](/content/2019_CTF/HSCTF/writeup_a_byte.md)
-    - License
-    - DaHeck
-    
+* * *    
 - AngstromCTF
     - [Aquarium](/content/2019_CTF/angstromCTF/writeup_aquarium.md)
     - [Chain of Rope](/content/2019_CTF/angstromCTF/writeup_chain_of_rope.md)
