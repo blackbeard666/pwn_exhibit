@@ -4,7 +4,7 @@
 
 - Grimmcon CTF
     - [sentinel](/content/2020_CTF/grimmconCTF/sentinel_writeup.md)
-
+    - [sentinel](/content/2020_CTF/grimmconCTF/axiom_writeup.md)
 - Vulncon CTF
     - [warmup](/content/2020_CTF/vulnconCTF/pwn_warmup_writeup.md)
     - [name](/content/2020_CTF/vulnconCTF/pwn_name_writeup.md)
