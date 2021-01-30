@@ -1,10 +1,20 @@
 # CTF Writeups
+
+## 2021
+* * *
+
+- 0x41414141 CTF
+     - [moving signals](/content/2021_CTF/offshiftCTF/signals_writeup.md)
+     - [return of the rops](/content/2021_CTF/offshiftCTF/retrop_writeup.md)
+     - [babyheap](/content/2021_CTF/offshiftCTF/babyheap_writeup.md)
+     
 ## 2020
 * * *
 
 - Grimmcon CTF
     - [sentinel](/content/2020_CTF/grimmconCTF/sentinel_writeup.md)
     - [axiom](/content/2020_CTF/grimmconCTF/axiom_writeup.md)
+
 - Vulncon CTF
     - [warmup](/content/2020_CTF/vulnconCTF/pwn_warmup_writeup.md)
     - [name](/content/2020_CTF/vulnconCTF/pwn_name_writeup.md)
