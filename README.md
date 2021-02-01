@@ -21,6 +21,7 @@
     - [name](/content/2020_CTF/vulnconCTF/pwn_name_writeup.md)
     - [looping](/content/2020_CTF/vulnconCTF/pwn_looping_writeup.md)
     - [where to go?](/content/2020_CTF/vulnconCTF/pwn_where_writeup.md)
+    - [old time](/content/2020_CTF/vulnconCTF/pwn_oldtime_writeup.md)
 
 - XMAS CTF
     - [Naughty?](/content/2020_CTF/xmasCTF/pwn_naughty/pwn_naughty_writeup.md)
