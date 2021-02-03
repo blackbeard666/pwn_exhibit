@@ -5,6 +5,7 @@
 
 - 0x41414141 CTF
      - [moving signals](/content/2021_CTF/offshiftCTF/signals_writeup.md)
+     - [external](/content/2021_CTF/offshiftCTF/external_writeup.md)
      - [echo](/content/2021_CTF/offshiftCTF/echo_writeup.md)
      - [return of the rops](/content/2021_CTF/offshiftCTF/retrop_writeup.md)
      - [babyheap](/content/2021_CTF/offshiftCTF/babyheap_writeup.md)
