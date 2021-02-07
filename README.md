@@ -3,6 +3,9 @@
 ## 2021
 * * *
 
+- TrollCat CTF
+    - [msgbox](/content/2021_CTF/trollcatCTF/msgbox_writeup.md)
+    
 - 0x41414141 CTF
      - [moving signals](/content/2021_CTF/offshiftCTF/signals_writeup.md)
      - [external](/content/2021_CTF/offshiftCTF/external_writeup.md)
