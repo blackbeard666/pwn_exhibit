@@ -1,8 +1,8 @@
 ## INFERNO [tryhackme]
 ![](inferno_banner.png)
 > "Midway upon the journey of our life I found myself within a forest dark, For the straightforward pathway had been lost. Ah me! how hard a thing it is to say What was this forest savage, rough, and stern, Which in the very thought renews the fear."
+> There are 2 hash keys located on the machine (user - local.txt and root - proof.txt), can you find them and become root?
 
-There are 2 hash keys located on the machine (user - local.txt and root - proof.txt), can you find them and become root?
 
 ## Background Info
 #### This marks the first medium-level box I did on [tryhackme](https://tryhackme.com/) and the first writeup I'll do aside from the usual jeopardy pwn challs. I'll start documenting my solves on future boxes as a way to prepare for OSCP documentation if I'll ever have the chance to take it. Inferno was a pretty fun box for me, I suggest taking a shot at it. 
