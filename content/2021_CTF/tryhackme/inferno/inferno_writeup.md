@@ -51,7 +51,7 @@ dante:[REDACTED]
 ```
 
 #### We can now successfully login into ssh as dante and retrieve the local flag. 
-![](inferno_9_user_shell.png)
+![](inferno_9_usershell.png)
 
 ## Privesc
 #### Before using enumeration scripts, I first check if there are commands which we can run as root.

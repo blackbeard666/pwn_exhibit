@@ -2,7 +2,8 @@
 
 ## 2021
 * * *
-
+- TRYHACKME
+    - [Inferno](/content/2021_CTF/tryhackme/inferno/inferno_writeup.md)
 - TrollCat CTF
     - [msgbox](/content/2021_CTF/trollcatCTF/msgbox_writeup.md)
     
