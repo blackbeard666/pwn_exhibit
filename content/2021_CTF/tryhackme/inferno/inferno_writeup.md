@@ -1,6 +1,7 @@
-## INFERNO [tryhackme]
 ![](inferno_banner.png)
+
 > "Midway upon the journey of our life I found myself within a forest dark, For the straightforward pathway had been lost. Ah me! how hard a thing it is to say What was this forest savage, rough, and stern, Which in the very thought renews the fear."
+
 > There are 2 hash keys located on the machine (user - local.txt and root - proof.txt), can you find them and become root?
 
 
@@ -49,7 +50,8 @@ ch’ella mi fa tremar le vene e i polsi».
 dante:[REDACTED]
 ```
 
-#### We can now successfully login into ssh and retrieve the first flag for the box.
+#### We can now successfully login into ssh as dante and retrieve the local flag. 
+![](inferno_9_user_shell.png)
 
 ## Privesc
 #### Before using enumeration scripts, I first check if there are commands which we can run as root.
@@ -61,3 +63,4 @@ dante:[REDACTED]
 #### Cool, so what next. I had no idea and got stuck again. My initial thought process was that maybe there was a cronjob that maybe we can write a reverse shell script to and wait for the time to hit; but there was none and the ssh seemed to die for some reason after quite some time so that attack path wasn't feasible. 
 
 #### After some time of research again, I stumbled upon the idea of adding a user with root permissions from [this](https://d00mfist1.gitbooks.io/ctf/content/privilege_escalation_-_linux.html) resource. With tee running as root, we can forge a new user and add an entry into /etc/passwd. We can then proceed to su as the forged user and we will have a root shell!
+![](inferno_10_rootshell.png)
