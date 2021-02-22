@@ -10,6 +10,7 @@
     - [Easy-ROP](/content/2021_CTF/darkcon/easyrop_writeup.md)
     - [Warmup](/content/2021_CTF/darkcon/warmup_writeup.md)
     - [ezpz](/content/2021_CTF/darkcon/ezpz_writeup.md)
+    - [Take it Easy](/content/2021_CTF/darkcon/easy_cry.md)
 - TrollCat CTF
     - [msgbox](/content/2021_CTF/trollcatCTF/msgbox_writeup.md)
     
