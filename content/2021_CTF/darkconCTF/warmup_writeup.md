@@ -1,6 +1,7 @@
 ## DarkCON CTF: warmup [pwn]
 ##### *tl;dr: libc 2.27 double free to tcache poison*
 
+![](warmup_desc.png)
 #### I'll do a more detailed writeup later. After reversing, we find out that we don't have uaf/heap overflow but we can double free without restrictions. We leverage this double free to perform a tcache poison to get a chunk on top of `__free_hook` and free a chunk with `'/bin/sh'` as it's first 8 bytes to get a shell.
 
 ```python
