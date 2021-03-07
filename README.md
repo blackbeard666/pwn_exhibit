@@ -5,7 +5,10 @@
 - TRYHACKME
     - [Inferno](/content/2021_CTF/tryhackme/inferno/inferno_writeup.md)
     - [Watcher](/content/2021_CTF/tryhackme/watcher/watcher_writeup.md)
-    
+
+- zer0pts CTF
+    - [Not beginner's stack](/content/2021_CTF/zeroptsCTF/not_beginner_stack_writeup.md)
+
 - DarkCon CTF
     - [Intro](/content/2021_CTF/darkconCTF/intro.md)
     - [Easy-ROP](/content/2021_CTF/darkconCTF/easyrop_writeup.md)
