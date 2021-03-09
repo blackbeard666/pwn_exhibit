@@ -8,8 +8,8 @@
 
 - BsidesSF CTF
     - [runme 1,2,3](/content/2021_CTF/bsidesSFCTF/pwn_runme_writeup.md)
-    - Charge Tracker
-    - Msg Store
+    - [reverseme 1,2](/content/2021_CTF/bsidesSFCTF/pwn_revme_writeup.md)
+    - [Charge Tracker](/content/2021_CTF/bsidesSFCTF/android_charge_writeup.md)
     
 - zer0pts CTF
     - [Not beginner's stack](/content/2021_CTF/zeroptsCTF/not_beginner_stack_writeup.md)
