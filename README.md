@@ -6,6 +6,8 @@
     - [Inferno](/content/2021_CTF/tryhackme/inferno/inferno_writeup.md)
     - [Watcher](/content/2021_CTF/tryhackme/watcher/watcher_writeup.md)
 
+- Securinets Quals CTF
+    - [killshot](/content/2021_CTF/securinets_qualsCTF/killshot_writeup.md)
 - Nahamcon CTF
 	- [meddle](/content/2021_CTF/nahamconCTF/meddle_writeup.md)
 - BsidesSF CTF
