@@ -5,38 +5,66 @@
 
 ## 2021
 * * *
-- TRYHACKME
-    - [Inferno](/content/2021_CTF/tryhackme/inferno/inferno_writeup.md)
-    - [Watcher](/content/2021_CTF/tryhackme/watcher/watcher_writeup.md)
 
-- Securinets Quals CTF
-    - [killshot](/content/2021_CTF/securinets_qualsCTF/killshot_writeup.md)
-- Nahamcon CTF
-	- [meddle](/content/2021_CTF/nahamconCTF/meddle_writeup.md)
-- BsidesSF CTF
-    - [runme 1,2,3](/content/2021_CTF/bsidesSFCTF/pwn_runme_writeup.md)
-    - [reverseme 1,2](/content/2021_CTF/bsidesSFCTF/pwn_revme_writeup.md)
-    - [Charge Tracker](/content/2021_CTF/bsidesSFCTF/android_charge_writeup.md)
-    
-- zer0pts CTF
-    - [Not beginner's stack](/content/2021_CTF/zeroptsCTF/not_beginner_stack_writeup.md)
+TRYHACKME
 
-- DarkCon CTF
-    - [Intro](/content/2021_CTF/darkconCTF/intro.md)
-    - [Easy-ROP](/content/2021_CTF/darkconCTF/easyrop_writeup.md)
-    - [Warmup](/content/2021_CTF/darkconCTF/warmup_writeup.md)
-    - [ezpz](/content/2021_CTF/darkconCTF/ezpz_writeup.md)
-    - [Take it Easy](/content/2021_CTF/darkconCTF/easy_cry.md)
+|                                                                   |                                       |
+|-------------------------------------------------------------------|---------------------------------------|
+| [Inferno](/content/2021_CTF/tryhackme/inferno/inferno_writeup.md) | `http basic auth`, `cve`              |
+| [Watcher](/content/2021_CTF/tryhackme/watcher/watcher_writeup.md) | `lfi`, `cronjobs`, `multiple privesc` |
+
+Securinets Quals CTF
+
+|                                                                       |                                                                            |
+|-----------------------------------------------------------------------|----------------------------------------------------------------------------|
+| [killshot](/content/2021_CTF/securinets_qualsCTF/killshot_writeup.md) | `tcache_perthread_struct`, `printf www`, `heap rop`, `seccomp`, `analysis` |
+| deathnote                                                             | `tcache poison`, `negative index write`                                    |
+
+NahamconCTF
+
+|                                                           |                                                  |
+|-----------------------------------------------------------|--------------------------------------------------|
+| [meddle](/content/2021_CTF/nahamconCTF/meddle_writeup.md) | `tcache poison`, `libc 2.27`, `misaligned input` |
+
+BsidesSF CTF
+
+|                                                                           |                              |
+|---------------------------------------------------------------------------|------------------------------|
+| [runme 1,2,3](/content/2021_CTF/bsidesSFCTF/pwn_runme_writeup.md)         | `self-modifying shellcode`   |
+| [reverseme 1,2](/content/2021_CTF/bsidesSFCTF/pwn_revme_writeup.md)       | `encoded shellcode`          |
+| [Charge Tracker](/content/2021_CTF/bsidesSFCTF/android_charge_writeup.md) | `android rev`, `adb dumpsys` |
+
+zer0pts CTF
+
+|                                                                                    |                |
+|------------------------------------------------------------------------------------|----------------|
+| [Not beginner's stack](/content/2021_CTF/zeroptsCTF/not_beginner_stack_writeup.md) | `shadow stack` |
+
+DarkCon CTF
+
+|                                                             |                                                           |
+|-------------------------------------------------------------|-----------------------------------------------------------|
+| [Intro](/content/2021_CTF/darkconCTF/intro.md)              | `intro`                                                   |
+| [Easy-ROP](/content/2021_CTF/darkconCTF/easyrop_writeup.md) | `pwn`, `x64`, `sigrop`                                    |
+| [Warmup](/content/2021_CTF/darkconCTF/warmup_writeup.md)    | `pwn`, `x64`, `libc-2.27`, `double free`, `tcache poison` |
+| [ezpz](/content/2021_CTF/darkconCTF/ezpz_writeup.md)        | `android rev`, `adb logcat`                               |
+| [Take it Easy](/content/2021_CTF/darkconCTF/easy_cry.md)    | `crypto`, `low exponent attack`, `e = 3`                  |
+
+TrollCat CTF
+
+|                                                           |                 |
+|-----------------------------------------------------------|-----------------|
+| [msgbox](/content/2021_CTF/trollcatCTF/msgbox_writeup.md) | `tcache poison` |
     
-- TrollCat CTF
-    - [msgbox](/content/2021_CTF/trollcatCTF/msgbox_writeup.md)
-    
-- 0x41414141 CTF
-     - [moving signals](/content/2021_CTF/offshiftCTF/signals_writeup.md)
-     - [external](/content/2021_CTF/offshiftCTF/external_writeup.md)
-     - [echo](/content/2021_CTF/offshiftCTF/echo_writeup.md)
-     - [return of the rops](/content/2021_CTF/offshiftCTF/retrop_writeup.md)
-     - [babyheap](/content/2021_CTF/offshiftCTF/babyheap_writeup.md)
+0x41414141 CTF
+
+|                                                                       |                                        |
+|-----------------------------------------------------------------------|----------------------------------------|
+| [moving signals](/content/2021_CTF/offshiftCTF/signals_writeup.md)    | `sigrop`                               |
+| [external](/content/2021_CTF/offshiftCTF/external_writeup.md)         | `fixing GOT`, `rop`                    |
+| [echo](/content/2021_CTF/offshiftCTF/echo_writeup.md)                 | `sigrop`, `not fmtstr`                 |
+| [return of the rops](/content/2021_CTF/offshiftCTF/retrop_writeup.md) | `unintended: rop`, `intended: ret2csu` |
+| [babyheap](/content/2021_CTF/offshiftCTF/babyheap_writeup.md)         | `double free`, `tcache`                |
      
 ## 2020
 * * *
