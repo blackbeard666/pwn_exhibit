@@ -8,10 +8,11 @@
 
 
 ### Tryhackme
+
+{:class="table table-bordered"}
 |-------------------------------------------------------------------|---------------------------------------|
 | [Inferno](/content/2021_CTF/tryhackme/inferno/inferno_writeup.md) | `http basic auth`, `cve`              |
 | [Watcher](/content/2021_CTF/tryhackme/watcher/watcher_writeup.md) | `lfi`, `cronjobs`, `multiple privesc` |
-{:.table-striped}
 
 Securinets Quals CTF
 
