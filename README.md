@@ -6,10 +6,8 @@
 ## 2021
 * * *
 
-
-### Tryhackme
-
-|-------------------------------------------------------------------|---------------------------------------|
+| Tryhackme                                                         |:--------------------------------------|
+|:------------------------------------------------------------------|:--------------------------------------|
 | [Inferno](/content/2021_CTF/tryhackme/inferno/inferno_writeup.md) | `http basic auth`, `cve`              |
 | [Watcher](/content/2021_CTF/tryhackme/watcher/watcher_writeup.md) | `lfi`, `cronjobs`, `multiple privesc` |
 
