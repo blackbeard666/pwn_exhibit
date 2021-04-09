@@ -6,27 +6,27 @@
 ## 2021
 * * *
 
-| Tryhackme                                                         | tl;dr               | to quickly find stuff                                             |
-|:------------------------------------------------------------------|:--------------------|:------------------------------------------------------------------|
-| [Inferno](/content/2021_CTF/tryhackme/inferno/inferno_writeup.md) | `sigrop`            | `http basic auth`, `codiad cve`, `tee privesc`                    |
-| [Watcher](/content/2021_CTF/tryhackme/watcher/watcher_writeup.md) | `fixing GOT`, `rop` | `lfi`, `cronjobs`, `multiple privesc`, `python library hijacking` |
+| Tryhackme                                                         | tl;dr                                                           | to quickly find stuff                                             |
+|-------------------------------------------------------------------|-----------------------------------------------------------------|-------------------------------------------------------------------|
+| [Inferno](/content/2021_CTF/tryhackme/inferno/inferno_writeup.md) | bruteforce basic auth, find CVE for web ide, write forged privs | `http basic auth`, `codiad cve`, `tee privesc`                    |
+| [Watcher](/content/2021_CTF/tryhackme/watcher/watcher_writeup.md) | multiple privesc using different techniques                     | `lfi`, `cronjobs`, `multiple privesc`, `python library hijacking` |
 
 * * *
 
-| Securinets Quals                                                      | tl;dr                                                                 | to quickly find stuff                                                      |
+| Securinets Quals                                                      | tl;dr                                                                 |                                                                            |
 |:----------------------------------------------------------------------|:----------------------------------------------------------------------|:---------------------------------------------------------------------------|
 | [killshot](/content/2021_CTF/securinets_qualsCTF/killshot_writeup.md) | format string to leak, www primitive, ropchain on heap chunk          | `tcache_perthread_struct`, `printf www`, `heap rop`, `seccomp`, `analysis` |
 | deathnote                                                             | uaf, overwrite tcache entry in perthread struct to point to free hook | `tcache poison`, `negative index write`                                    |
 
 * * *
 
-| Nahamcon CTF                                              | tl;dr                                                     | to quickly find stuff                            |
+| Nahamcon CTF                                              | tl;dr                                                     |                                                  |
 |:----------------------------------------------------------|:----------------------------------------------------------|:-------------------------------------------------|
 | [meddle](/content/2021_CTF/nahamconCTF/meddle_writeup.md) | usual tcache challenge, but tricky way to write to chunks | `tcache poison`, `libc 2.27`, `misaligned input` |
 
 * * *
 
-| BsidesSF CTF                                                              | tl;dr                                         | to quickly find stuff      |
+| BsidesSF CTF                                                              | tl;dr                                         |                            |
 |:--------------------------------------------------------------------------|:----------------------------------------------|:---------------------------|
 | [runme 1,2,3](/content/2021_CTF/bsidesSFCTF/pwn_runme_writeup.md)         | didn't allow syscall/int0x80 bytes            | `self-modifying shellcode` |
 | [reverseme 1,2](/content/2021_CTF/bsidesSFCTF/pwn_revme_writeup.md)       | xor encoded, latter part was rng              | `encoded shellcode`        |
@@ -34,13 +34,13 @@
 
 * * *
 
-| zer0pts ctf                                                                        | tl;dr                        | to quickly find stuff |
+| zer0pts ctf                                                                        | tl;dr                        |                       |
 |:-----------------------------------------------------------------------------------|:-----------------------------|:----------------------|
 | [Not beginner's stack](/content/2021_CTF/zeroptsCTF/not_beginner_stack_writeup.md) | read more about stack shadow | `stack shadow`        |
 
 * * *
 
-| Darkcon CTF                                                 | tl;dr                                      | to quickly find stuff                                     |
+| Darkcon CTF                                                 | tl;dr                                      |                                                           |
 |:------------------------------------------------------------|:-------------------------------------------|:----------------------------------------------------------|
 | [Intro](/content/2021_CTF/darkconCTF/intro.md)              | prologue                                   | `info`                                                    |
 | [Easy-ROP](/content/2021_CTF/darkconCTF/easyrop_writeup.md) | bof + multiple approaches                  | `pwn`, `x64`, `sigrop`                                    |
@@ -50,13 +50,13 @@
 
 * * *
 
-| Trollcat CTF                                              | tl;dr        | to quickly find stuff |
+| Trollcat CTF                                              | tl;dr        |                       |
 |:----------------------------------------------------------|:-------------|:----------------------|
 | [msgbox](/content/2021_CTF/trollcatCTF/msgbox_writeup.md) | simple stuff | `tcache poison`       |
 
 * * *    
 
-| 0x41414141 CTF                                                        | tl;dr                                                          | to quickly find stuff |
+| 0x41414141 CTF                                                        | tl;dr                                                          |                       |
 |:----------------------------------------------------------------------|:---------------------------------------------------------------|:----------------------|
 | [moving signals](/content/2021_CTF/offshiftCTF/signals_writeup.md)    | simple stuff                                                   | `sigrop`              |
 | [external](/content/2021_CTF/offshiftCTF/external_writeup.md)         | program cleared the GOT after overflow, needed a way to fix it | `fixing GOT`, `rop`   |
