@@ -6,15 +6,12 @@
 ## 2021
 * * *
 
-| Tryhackme                                                         | tl;dr               | to quickly find stuff                                             |
-|:------------------------------------------------------------------|:--------------------|:------------------------------------------------------------------|
-| [Inferno](/content/2021_CTF/tryhackme/inferno/inferno_writeup.md) | `sigrop`            | `http basic auth`, `codiad cve`, `tee privesc`                    |
-| [Watcher](/content/2021_CTF/tryhackme/watcher/watcher_writeup.md) | `fixing GOT`, `rop` | `lfi`, `cronjobs`, `multiple privesc`, `python library hijacking` |
-
-* * *
-
-| Securinets Quals                                                      | tl;dr                                                                 | to quickly find stuff                                                      |
-|:----------------------------------------------------------------------|:----------------------------------------------------------------------|:---------------------------------------------------------------------------|
+| CTF WRITEUPS                                                          | tl;dr                                                                 |                                                           |
+|-----------------------------------------------------------------------|-----------------------------------------------------------------------|----------------------------------------------------------------------------|
+| Tryhackme                                                             | tl;dr                                                                 | to quickly find stuff                                                      |
+| [Inferno](/content/2021_CTF/tryhackme/inferno/inferno_writeup.md)     | simple stuff                                                          | `http basic auth`, `codiad cve`, `tee privesc`                             |
+| [Watcher](/content/2021_CTF/tryhackme/watcher/watcher_writeup.md)     | simple stuff                                                          | `lfi`, `cronjobs`, `multiple privesc`, `python library hijacking`          |
+| Securinets Quals                                                      |                                                                       |                                                                            |
 | [killshot](/content/2021_CTF/securinets_qualsCTF/killshot_writeup.md) | format string to leak, www primitive, ropchain on heap chunk          | `tcache_perthread_struct`, `printf www`, `heap rop`, `seccomp`, `analysis` |
 | deathnote                                                             | uaf, overwrite tcache entry in perthread struct to point to free hook | `tcache poison`, `negative index write`                                    |
 
