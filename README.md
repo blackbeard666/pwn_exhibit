@@ -1,15 +1,44 @@
 # CTF Writeups
 
-## [https://gist.github.com/blackbeard666/](https://gist.github.com/blackbeard666/)
-#### Solve scripts for challs that I don't have the time to create writeups for (or that the basic idea has been covered in other writeups here, only with a few additions). Might still create writeups for them tho.
+| pwnscripts                                                                       | tl;dr                                                                                                                                                                                                             |                           |
+|:---------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:--------------------------|
+| [https://gist.github.com/blackbeard666/](https://gist.github.com/blackbeard666/) | Solve scripts for challs that I don't have the time to create writeups for (or that the basic idea has been covered in other writeups here, only with a few additions). Might still create writeups for them tho. | format string, off-by-one |
+
 
 ## 2021
+
+| Hack The Box  | tl;dr          |                |
+|:--------------|:---------------|:---------------|
+| Script Kiddie | [--redacted--] | [--redacted--] |
+| Armageddon    | [--redacted--] | [--redacted--] |
+
 * * *
 
-| Tryhackme                                                         | tl;dr                                                           | to quickly find stuff                                             |
-|-------------------------------------------------------------------|-----------------------------------------------------------------|-------------------------------------------------------------------|
+| Tryhackme                                                         | tl;dr                                                           |                                                                  |
+|:------------------------------------------------------------------|:----------------------------------------------------------------|:------------------------------------------------------------------|
 | [Inferno](/content/2021_CTF/tryhackme/inferno/inferno_writeup.md) | bruteforce basic auth, find CVE for web ide, write forged privs | `http basic auth`, `codiad cve`, `tee privesc`                    |
 | [Watcher](/content/2021_CTF/tryhackme/watcher/watcher_writeup.md) | multiple privesc using different techniques                     | `lfi`, `cronjobs`, `multiple privesc`, `python library hijacking` |
+
+* * *
+
+| angstrom CTF                                                                                   | tl;dr          |                                    |
+|:-----------------------------------------------------------------------------------------------|:---------------|:-----------------------------------|
+| pawn                                                                                           | still studying | [--redacted--]                     |
+| carpal tunnel syndrome                                                                         | still studying | [--redacted--]                     |
+| [raiid shadow legends](https://gist.github.com/blackbeard666/f176e4d8b22e6a38886a3541605afbf0) | c++ uaf        | c++ raii, uaf, c++ alloc internals |
+
+* * *
+
+| Foobar CTF  | tl;dr                                                                   |                                                    |
+|:------------|:------------------------------------------------------------------------|:---------------------------------------------------|
+| rOw Row roW | open read write                                                         | `bof`, `orw`, `shellcode`                          |
+| deathnote   | fastbin poison + malloc hook fengshui to avoid memory corruption (fast) | `libc-2.23`, `uaf`, `fastbin`, `unsorted bin leak` |
+
+* * *
+
+| Volga Quals | tl;dr                                                          |                           |
+|:------------|:---------------------------------------------------------------|:--------------------------|
+| pennywise   | off-by-one to control chunk pointer which is added to bin list | format string, off-by-one |
 
 * * *
 
