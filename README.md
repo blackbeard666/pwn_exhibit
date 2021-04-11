@@ -1,8 +1,8 @@
 # CTF Writeups
 
-| pwnscripts                                                                       | tl;dr                                                                                                                                                                                                             |                           |
-|:---------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:--------------------------|
-| [https://gist.github.com/blackbeard666/](https://gist.github.com/blackbeard666/) | Solve scripts for challs that I don't have the time to create writeups for (or that the basic idea has been covered in other writeups here, only with a few additions). Might still create writeups for them tho. | format string, off-by-one |
+| pwnscripts                                                                       | tl;dr                                                                                                                                                                                                             |   |
+|:---------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:--|
+| [https://gist.github.com/blackbeard666/](https://gist.github.com/blackbeard666/) | Solve scripts for challs that I don't have the time to create writeups for (or that the basic idea has been covered in other writeups here, only with a few additions). Might still create writeups for them tho. |   |
 
 
 ## 2021
