@@ -19,7 +19,7 @@
 | [Inferno](/content/2021_CTF/tryhackme/inferno/inferno_writeup.md) | bruteforce basic auth, find CVE for web ide, write forged privs | `http basic auth`, `codiad cve`, `tee privesc`                    |
 | [Watcher](/content/2021_CTF/tryhackme/watcher/watcher_writeup.md) | multiple privesc using different techniques                     | `lfi`, `cronjobs`, `multiple privesc`, `python library hijacking` |
 
-* * *
+* * * 
 
 | angstrom CTF                                                                                   | tl;dr          |                                    |
 |:-----------------------------------------------------------------------------------------------|:---------------|:-----------------------------------|
@@ -27,12 +27,13 @@
 | carpal tunnel syndrome                                                                         | still studying | [--redacted--]                     |
 | [raiid shadow legends](https://gist.github.com/blackbeard666/f176e4d8b22e6a38886a3541605afbf0) | c++ uaf        | c++ raii, uaf, c++ alloc internals |
 
+
 * * *
 
-| Foobar CTF  | tl;dr                                                                   |                                                    |
-|:------------|:------------------------------------------------------------------------|:---------------------------------------------------|
-| rOw Row roW | open read write                                                         | `bof`, `orw`, `shellcode`                          |
-| deathnote   | fastbin poison + malloc hook fengshui to avoid memory corruption (fast) | `libc-2.23`, `uaf`, `fastbin`, `unsorted bin leak` |
+| Foobar CTF                                                                                                  | tl;dr                                                                                                            |                                                                     |
+|:------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------|
+| [deathnote](/content/2021_CTF/foobarCTF/pwn_deathnote.md)                                                   | partial solve; fastbin attack, allocate misaligned memory pointer to pass malloc check and overwrite malloc hook | `libc 2.23`, `fastbin attack`, `__malloc_hook misaligned technique` |
+| [rOw Row roW](https://gist.github.com/blackbeard666/a906daa1f3c085d5047b8194f6f1d468#file-pwn_rowrowrow-py) | seccomp -> open-read-write shellcode                                                                             | `seccomp`, `orw`, `shellcode`                                       |
 
 * * *
 
