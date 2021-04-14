@@ -21,6 +21,13 @@
 
 * * * 
 
+| Pragyan CTF                                                                             | tl;dr                                                     |                    |
+|:----------------------------------------------------------------------------------------|:----------------------------------------------------------|:-------------------|
+| [login](https://gist.github.com/blackbeard666/c35ac911e3eb5219f2bfba856931e141)         | format string to overwrite size field for buffer overflow | `fmtstr_payload()` |
+| [cachetroubles](https://gist.github.com/blackbeard666/c35ac911e3eb5219f2bfba856931e141) | heap fengshui to get double free on tcache + unsortedbin  | `libc-2.31`        |
+
+* * * 
+
 | angstrom CTF                                                                                   | tl;dr          |                                    |
 |:-----------------------------------------------------------------------------------------------|:---------------|:-----------------------------------|
 | pawn                                                                                           | still studying | [--redacted--]                     |
