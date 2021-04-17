@@ -4,13 +4,13 @@
 |:---------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:--|
 | [https://gist.github.com/blackbeard666/](https://gist.github.com/blackbeard666/) | Solve scripts for challs that I don't have the time to create writeups for (or that the basic idea has been covered in other writeups here, only with a few additions). Might still create writeups for them tho. |   |
 
+* * *
 
-## 2021
-
-| Hack The Box  | tl;dr          |                |
-|:--------------|:---------------|:---------------|
-| Script Kiddie | [--redacted--] | [--redacted--] |
-| Armageddon    | [--redacted--] | [--redacted--] |
+| Hack The Box                                               | tl;dr                                                         |                |
+|:-----------------------------------------------------------|:--------------------------------------------------------------|:---------------|
+| Script Kiddie                                              | [--redacted--]                                                | [--redacted--] |
+| Armageddon                                                 | [--redacted--]                                                | [--redacted--] |
+| [Laboratory](/content/hackthebox/laboratory/laboratory.md) | gitlab 12.8.1 rce, docker-security path variable manipulation |                |
 
 * * *
 
@@ -20,6 +20,9 @@
 | [Watcher](/content/2021_CTF/tryhackme/watcher/watcher_writeup.md) | multiple privesc using different techniques                     | `lfi`, `cronjobs`, `multiple privesc`, `python library hijacking` |
 
 * * * 
+
+## 2021
+
 
 | Pragyan CTF                                                                             | tl;dr                                                     |                    |
 |:----------------------------------------------------------------------------------------|:----------------------------------------------------------|:-------------------|
