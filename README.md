@@ -23,6 +23,14 @@
 
 ## 2021
 
+| HTB: CyberApocalypse                                                                | tl;dr                                                                          |                                 |
+|:------------------------------------------------------------------------------------|:-------------------------------------------------------------------------------|:--------------------------------|
+| [Controller](/content/2021_CTF/cyberapocalypseCTF/controller_writeup.md)            | `negative index leads to integer overflow which leads to bof`                  | integer overflow, z3            |
+| [Minefield](/content/2021_CTF/cyberapocalypseCTF/minefield_writeup.md)              | `arbitrary write primitive to control destructor for RCE`                      | fini_array, destructors         |
+| [Harvester](/content/2021_CTF/cyberapocalypseCTF/harvester_writeup.md)              | `just the simple stuff, made more complicated by a pokemon-themed menu`        | canary leak, format string, bof |
+| [Save the Environment](/content/2021_CTF/cyberapocalypseCTF/environment_writeup.md) | `leak stack addresses from libc pointers to overwrite return address on stack` | environ variable                |
+
+* * * 
 
 | Pragyan CTF                                                                             | tl;dr                                                     |                    |
 |:----------------------------------------------------------------------------------------|:----------------------------------------------------------|:-------------------|
