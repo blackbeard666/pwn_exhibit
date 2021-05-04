@@ -11,6 +11,10 @@
 | Script Kiddie                                              | [--redacted--]                                                | [--redacted--] |
 | Armageddon                                                 | [--redacted--]                                                | [--redacted--] |
 | [Laboratory](/content/hackthebox/laboratory/laboratory.md) | gitlab 12.8.1 rce, docker-security path variable manipulation |                |
+| Love                                                       | [--redacted--]                                                | [--redacted--] |
+| Spectra                                                    | [--redacted--]                                                | [--redacted--] |
+| Ready                                                      | [--redacted--]                                                | [--redacted--] |
+| Tenet                                                      | [--redacted--]                                                | [--redacted--] |
 
 * * *
 
