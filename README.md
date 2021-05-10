@@ -36,6 +36,13 @@
 
 * * * 
 
+| Hack The Box                                                 | tl;dr         |                            |
+|--------------------------------------------------------------|---------------|----------------------------|
+| [Flag Dropper](/content/2021_CTF/sandiegoCTF/flagdropper.md) | ret2shellcode |                            |
+| [Unique Lasso](/content/2021_CTF/sandiegoCTF/lasso.md)       | SIGROP        | syscall loop; mov rax, rdx |
+
+* * * 
+
 | Pragyan CTF                                                                             | tl;dr                                                     |                    |
 |:----------------------------------------------------------------------------------------|:----------------------------------------------------------|:-------------------|
 | [login](https://gist.github.com/blackbeard666/c35ac911e3eb5219f2bfba856931e141)         | format string to overwrite size field for buffer overflow | `fmtstr_payload()` |
