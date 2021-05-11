@@ -36,7 +36,7 @@
 
 * * * 
 
-| Hack The Box                                                 | tl;dr         |                            |
+| SanDiego CTF                                                 | tl;dr         |                            |
 |--------------------------------------------------------------|---------------|----------------------------|
 | [Flag Dropper](/content/2021_CTF/sandiegoCTF/flagdropper.md) | ret2shellcode |                            |
 | [Unique Lasso](/content/2021_CTF/sandiegoCTF/lasso.md)       | SIGROP        | syscall loop; mov rax, rdx |
