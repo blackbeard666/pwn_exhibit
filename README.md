@@ -22,6 +22,7 @@
 | Pit                                                        | [--redacted--]                                                | [--redacted--] |
 | Atom                                                       | [--redacted--]                                                | [--redacted--] |
 | Monitors                                                   | [--redacted--]                                                | [--redacted--] |
+
 * * *
 
 | Tryhackme                                                         | tl;dr                                                           |                                                                  |
