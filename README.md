@@ -13,9 +13,15 @@
 | [Laboratory](/content/hackthebox/laboratory/laboratory.md) | gitlab 12.8.1 rce, docker-security path variable manipulation |                |
 | Love                                                       | [--redacted--]                                                | [--redacted--] |
 | Spectra                                                    | [--redacted--]                                                | [--redacted--] |
+| Knife                                                      | [--redacted--]                                                | [--redacted--] |
+| [Delivery](/content/hackthebox/delivery/delivery.md)       | [--redacted--]                                                | [--redacted--] |
 | Ready                                                      | [--redacted--]                                                | [--redacted--] |
 | Tenet                                                      | [--redacted--]                                                | [--redacted--] |
-
+| Ophiuchi                                                   | [--redacted--]                                                | [--redacted--] |
+| The Notebook                                               | [--redacted--]                                                | [--redacted--] |
+| Pit                                                        | [--redacted--]                                                | [--redacted--] |
+| Atom                                                       | [--redacted--]                                                | [--redacted--] |
+| Monitors                                                   | [--redacted--]                                                | [--redacted--] |
 * * *
 
 | Tryhackme                                                         | tl;dr                                                           |                                                                  |
@@ -37,7 +43,7 @@
 * * * 
 
 | SanDiego CTF                                                 | tl;dr         |                            |
-|--------------------------------------------------------------|---------------|----------------------------|
+|:-------------------------------------------------------------|:--------------|:---------------------------|
 | [Flag Dropper](/content/2021_CTF/sandiegoCTF/flagdropper.md) | ret2shellcode |                            |
 | [Unique Lasso](/content/2021_CTF/sandiegoCTF/lasso.md)       | SIGROP        | syscall loop; mov rax, rdx |
 
