@@ -6,22 +6,22 @@
 
 * * *
 
-| Hack The Box                                               | tl;dr                                                         |                |
-|:-----------------------------------------------------------|:--------------------------------------------------------------|:---------------|
-| Script Kiddie                                              | [--redacted--]                                                | [--redacted--] |
-| Armageddon                                                 | [--redacted--]                                                | [--redacted--] |
-| [Laboratory](/content/hackthebox/laboratory/laboratory.md) | gitlab 12.8.1 rce, docker-security path variable manipulation |                |
-| Love                                                       | [--redacted--]                                                | [--redacted--] |
-| Spectra                                                    | [--redacted--]                                                | [--redacted--] |
-| Knife                                                      | [--redacted--]                                                | [--redacted--] |
-| [Delivery](/content/hackthebox/delivery/delivery.md)       | [--redacted--]                                                | [--redacted--] |
-| Ready                                                      | [--redacted--]                                                | [--redacted--] |
-| Tenet                                                      | [--redacted--]                                                | [--redacted--] |
-| Ophiuchi                                                   | [--redacted--]                                                | [--redacted--] |
-| The Notebook                                               | [--redacted--]                                                | [--redacted--] |
-| Pit                                                        | [--redacted--]                                                | [--redacted--] |
-| Atom                                                       | [--redacted--]                                                | [--redacted--] |
-| Monitors                                                   | [--redacted--]                                                | [--redacted--] |
+| Hack The Box                                               | tl;dr                                                                           |
+|:-----------------------------------------------------------|:--------------------------------------------------------------------------------|
+| Script Kiddie                                              | [--redacted--]                                                                  |
+| Armageddon                                                 | [--redacted--]                                                                  |
+| [Laboratory](/content/hackthebox/laboratory/laboratory.md) | gitlab 12.8.1 rce, docker-security path variable manipulation                   |
+| Love                                                       | [--redacted--]                                                                  |
+| Spectra                                                    | [--redacted--]                                                                  |
+| Knife                                                      | [--redacted--]                                                                  |
+| [Delivery](/content/hackthebox/delivery/delivery.md)       | ticket tricks, rule-based hashcat                                               |
+| Ready                                                      | gitlab 11.4.7 ssrf/csrf RCE, docker priviledged mode breakout, filesystem mount |
+| Tenet                                                      | [--redacted--]                                                                  |
+| Ophiuchi                                                   | [--redacted--]                                                                  |
+| The Notebook                                               | [--redacted--]                                                                  |
+| Pit                                                        | [--redacted--]                                                                  |
+| Atom                                                       | [--redacted--]                                                                  |
+| Monitors                                                   | [--redacted--]                                                                  |
 
 * * *
 
