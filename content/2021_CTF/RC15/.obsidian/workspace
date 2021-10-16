@@ -6,6 +6,7 @@
       {
         "id": "afcf885a64eef405",
         "type": "leaf",
+        "dimension": 46.73913043478261,
         "state": {
           "type": "markdown",
           "state": {
@@ -18,6 +19,7 @@
       {
         "id": "3fae61efc35304ca",
         "type": "leaf",
+        "dimension": 53.2608695652174,
         "state": {
           "type": "markdown",
           "state": {
@@ -65,8 +67,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 145,
-    "collapsed": true
+    "width": 145
   },
   "right": {
     "id": "e51a3919ee1ec3f8",
@@ -100,17 +101,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "afcf885a64eef405",
+  "active": "3fae61efc35304ca",
   "lastOpenFiles": [
     "rootcon15ctf.md.md",
-    "2021-10-16_10-18.png",
-    "2021-10-16_10-14.png",
-    "2021-10-16_10-10.png",
-    "2021-10-16_10-07.png",
-    "2021-10-16_10-04.png",
-    "2021-10-16_10-03.png",
-    "2021-10-16_09-03.png",
-    "2021-10-16_09-19.png",
-    "2021-10-16_09-27.png"
+    "2021-10-16_13-56.png",
+    "2021-10-16_13-55.png",
+    "2021-10-16_13-46.png",
+    "2021-10-16_13-36.png",
+    "2021-10-16_13-32.png",
+    "2021-10-16_13-34.png",
+    "2021-10-16_13-27.png",
+    "2021-10-16_13-25.png",
+    "2021-10-16_10-18.png"
   ]
 }

