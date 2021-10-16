@@ -1,0 +1,116 @@
+{
+  "main": {
+    "id": "3b884bb8077e3a34",
+    "type": "split",
+    "children": [
+      {
+        "id": "afcf885a64eef405",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "rootcon15ctf.md.md",
+            "mode": "source"
+          }
+        },
+        "group": "adcd1c9f71c0598d"
+      },
+      {
+        "id": "3fae61efc35304ca",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "rootcon15ctf.md.md",
+            "mode": "preview"
+          }
+        },
+        "group": "adcd1c9f71c0598d"
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "f5915112bbcf56ec",
+    "type": "split",
+    "children": [
+      {
+        "id": "15147c109023c4da",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "969580e5eaa62dcf",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "9e1a8ccb6058f1f2",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 145,
+    "collapsed": true
+  },
+  "right": {
+    "id": "e51a3919ee1ec3f8",
+    "type": "split",
+    "children": [
+      {
+        "id": "028d363247c89341",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8bf8cd9a0cc7f1c5",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "rootcon15ctf.md.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "afcf885a64eef405",
+  "lastOpenFiles": [
+    "rootcon15ctf.md.md",
+    "2021-10-16_10-18.png",
+    "2021-10-16_10-14.png",
+    "2021-10-16_10-10.png",
+    "2021-10-16_10-07.png",
+    "2021-10-16_10-04.png",
+    "2021-10-16_10-03.png",
+    "2021-10-16_09-03.png",
+    "2021-10-16_09-19.png",
+    "2021-10-16_09-27.png"
+  ]
+}
