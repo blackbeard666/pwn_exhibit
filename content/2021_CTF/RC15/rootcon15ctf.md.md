@@ -2,12 +2,16 @@
 
 ![](2021-10-16_09-19.png)
 
+I finally got to participate playing in the country's most grueling CTF competition! Together with @r3dact0r and @chrislaconsay, we (`Queen Anne's Revenge`) dominated the scoreboard for most of the competition, until the last moments where `THEOS Offense` closed out the lead and secured the top spot(kudos to them!). It has been a very challenging and competitive experience, I stepped out of my pwn/rev comfort zone to solve web challs, got to learn some OSINT and forensics techniques. Now that I've gotten a glimpse of the challenges, categories, and level of difficulty offered, I'll continue enhancing my skillset , on what I lack and will definitely come back stronger on the next editions. 
+
+Here are some brief writeups on some of the challenges I solved. 
+
 -------------------------------------------------------
 #### Web
 - [Web 200: You can't see me!](#web200)
 - [Web 300: See Secret in Rootcon File](#web300)
 - [Web 400: PwnDeManila's Files](#web400)
-- Web 500: Guess The Number
+- [Web 500: Guess The Number](#web500)
 
 #### OSINT
 - [OSINT 100: Hide and Seek](#osint100)
@@ -144,6 +148,132 @@ However, it was not over as there were other checks in place to filter out which
 From there, it was just a matter of retrieving the flag:
 
 ![](2021-10-16_13-56.png)
+
+---------------------------------------------------
+
+## Web500
+![](2021-10-16_14-32.png)
+Highest point challenge in the CTF. Was pretty satisfying to draw first blood on it. We were given a website which had a guessing game theme:
+
+![](2021-10-16_14-32_1.png)
+
+The mechanics were pretty easy. We needed to guess a number between 0-9 to win but nothing really happens when we win the game (which we can win everytime bc the correct answer is logged through the console before the game starts). We can review the script used for the game, but it is irrelevant:
+```javascript
+var correctAnswer = Math.ceil(Math.random() * 10)
+var form = document.querySelector('#guess')
+var input = document.querySelector('input')
+var response = document.querySelector('.response')
+
+console.log(correctAnswer)
+
+form.addEventListener('submit', guess)
+
+function guess(e) {
+  e.preventDefault()
+  var theirAnswer = input.value
+  
+  if (theirAnswer == correctAnswer) {
+    response.innerHTML = 'Yay! You did it!'
+    correctAnswer = Math.ceil(Math.random() * 10)
+    var interval = setInterval(function(){
+      var red = Math.floor(Math.random() * 255)
+      var green = Math.floor(Math.random() * 255)
+      var blue = Math.floor(Math.random() * 255)
+      document.body.style.background = `rgb(${red}, ${green}, ${blue})`
+    }, 20)
+    setTimeout(function(){
+      clearInterval(interval)
+      document.body.style.background = '#fff'
+      response.innerHTML = ''
+      input.value = ''
+      console.log(correctAnswer)
+    }, 5000)
+  } else if (theirAnswer > correctAnswer) {
+    response.innerHTML = 'Too Big'
+  } else if (theirAnswer < correctAnswer) {
+    response.innerHTML = 'Too Small'
+  } else {
+    response.innerHTML = "That's not a number dummy!"
+  }
+}
+```
+
+Next step was to figure out how the request was sent. We inspect the source on the page and see the following:
+
+```html
+<!doctype html>
+<html>
+<head>
+<title>Guess The Number</title>
+<link rel='stylesheet' href='[https://punchcode.org/codepen.css](https://punchcode.org/codepen.css)'>
+<link rel="stylesheet" href="[./static/style.css](http://207.148.75.207/static/style.css)">
+</head>
+<body>
+
+<div id="container">
+	<form method="GET" id="guess" action="/process">
+		<h3 class="message">Guess the number</h3>
+		<div class="form">
+			<input type="text" name="num" placeholder="?" />
+			<button type="submit" value="submit">Guess Number</button>
+		</div>
+	</form>
+	<p class="response"></p>
+</div>
+
+
+<script src='[https://code.jquery.com/jquery-2.2.4.min.js](https://code.jquery.com/jquery-2.2.4.min.js)'></script>
+<script src="[./static/script.js](http://207.148.75.207/static/script.js)"></script>
+
+</body>
+</html>
+```
+
+It sends a GET request to `/process?num=input` where input is a number that we have provided. We follow the request and see a different page from the guessing game:
+
+![](2021-10-16_14-42.png)
+
+Very suspicious that our input gets reflected into the page. Examining the response headers reveal a key information
+
+![](2021-10-16_14-43.png)
+
+The backend uses python! Python backend + reflected value is an indicator that the web application may be vulnerable to server side template injection (SSTI). We can try to test out this hypothesis by providing `{{7*7}}`:
+
+![](2021-10-16_14-47.png)
+
+It worked! Next step I did was to try the following payload `{{'7' * 7}}` which returned `'7777777'` -> both of the positive results indicate that the Jinja2 framework is (most likely) in use. We can confirm this by triggering a known exception:
+
+![](2021-10-16_14-49.png)
+
+Yep, definitely Jinja2. The next step when exploiting (python) SSTI is to get a handle on the `__builtins__` module so that we can use/import other python modules. It is worth noting that there was a heavy filtering system in place, important characters such as ``'[', ']', '.'`` would throw exceptions, thus needed to be bypassed.
+
+In order to get to `__builtins__`, I used the cycler class -> accessed the `__init__` dunder method --> accessed its `__globals__` then used `__getitem__`. 
+
+![](2021-10-16_15-03.png)
+
+Bingo! We have access to the built-in functions/classes/objects. Next thing we have to do is to use the `__import__` method so that we can import `os`. 
+
+![](2021-10-16_15-06.png)
+
+Hmm, it throws an `Internal Server Error` response which means something must be wrong with our request. How about we access another function, like `abs`?
+
+![](2021-10-16_15-07.png)
+
+It becomes evident that certain functions are also filtered. Those that give us easy access to code execution isn't allowed, e.g import, exec, eval. But the detection system can be easily defeated by using string concatenation:
+
+![](2021-10-16_15-09.png)
+
+We're getting close to completing the payload now that we have access to the `os` module; we now have a way to execute commands on the server itself by using `os.popen('insert command here').read()`
+
+![](2021-10-16_15-12.png)
+
+`<os._wrap_close object at 0x7fcf9ddbc400>` is a file object connected to the pipe that we opened, meaning that we successfully executed the command and we need to read the result of the command next. 
+
+![](2021-10-16_15-17.png)
+
+In the above payload, I used `(())` to call the read function bc `()` will be filtered and not execute the read call. From this point, we can proceed to where the flag file is, submit, record another first blood. 
+
+![](2021-10-16_15-21.png)
 
 ---------------------------------------------------
 
