@@ -153,6 +153,7 @@ From there, it was just a matter of retrieving the flag:
 
 ## Web500
 ![](2021-10-16_14-32.png)
+
 Highest point challenge in the CTF. Was pretty satisfying to draw first blood on it. We were given a website which had a guessing game theme:
 
 ![](2021-10-16_14-32_1.png)
